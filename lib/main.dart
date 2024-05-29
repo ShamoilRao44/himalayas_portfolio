@@ -1,10 +1,20 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'resources/app_pages.dart';
 import 'resources/app_colors.dart';
 import 'resources/app_routes.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: FirebaseOptions(
+      apiKey: "AIzaSyB5-EmQknIB7_-HDvlqihdrF5ipqSCQC9s",
+      projectId: "natural-himalaya",
+      messagingSenderId: "375185712190",
+      appId: "1:375185712190:web:d59361e871dbab32761d6f",
+    ),
+  );
   runApp(FrozenFoodShopApp());
 }
 

@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_portfolio/module/home/home_vm.dart';
 import 'package:food_portfolio/resources/app_fonts.dart';
+import 'package:food_portfolio/resources/app_routes.dart';
 import 'package:get/get.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:visibility_detector/visibility_detector.dart';
@@ -68,7 +69,7 @@ class ContactInfo extends StatelessWidget {
                   cursor: SystemMouseCursors.click,
                   child: GestureDetector(
                     onTap: () {
-                      Get.toNamed('/about'); // Ensure the correct route name
+                      Get.toNamed(AppRoutes.contact); // Ensure the correct route name
                     },
                     child: AnimatedContainer(
                       duration: 600.ms,
