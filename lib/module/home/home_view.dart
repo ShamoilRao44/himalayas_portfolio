@@ -1,8 +1,12 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
-import 'package:food_portfolio/module/home/widgets/footer.dart';
+import 'package:food_portfolio/resources/app_images.dart';
 import 'package:get/get.dart';
+
+import 'package:food_portfolio/utils/widgets/footer.dart';
+import '../../utils/widgets/navigation_header.dart';
 import 'home_vm.dart';
-import 'widgets/navigation_header.dart';
 import 'widgets/hero_section.dart';
 import 'widgets/featured_products.dart';
 import 'widgets/about_us_snapshot.dart';
@@ -24,7 +28,7 @@ class HomeView extends StatelessWidget {
                 width: wdth,
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage('assets/images/hero-section-bg.png'),
+                    image: AssetImage(Appimages.heroSectionBG),
                     fit: BoxFit.fill,
                   ),
                 ),

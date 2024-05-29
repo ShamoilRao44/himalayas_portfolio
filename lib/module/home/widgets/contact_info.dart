@@ -12,7 +12,6 @@ import 'package:food_portfolio/resources/app_colors.dart'; // Update the path as
 class ContactInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var wdth = MediaQuery.of(context).size.width;
     var hght = MediaQuery.of(context).size.height;
     return GetBuilder<HomeVM>(
       builder: (c) {

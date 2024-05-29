@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors
 
 import 'package:flutter/material.dart';
 import 'package:food_portfolio/resources/app_fonts.dart';
@@ -17,7 +17,6 @@ class AboutUsSnapshot extends StatelessWidget {
     return GetBuilder<HomeVM>(
       builder: (c) {
         var hght = MediaQuery.of(context).size.height;
-        var wdth = MediaQuery.of(context).size.width;
         return Container(
           height: hght * 0.9,
           padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 20.0),
