@@ -1,7 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:food_portfolio/resources/app_routes.dart';
 import 'package:get/get.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:visibility_detector/visibility_detector.dart';
@@ -14,7 +13,6 @@ import 'package:food_portfolio/resources/app_colors.dart'; // Update the path as
 class FeaturedProducts extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-   
     return GetBuilder<HomeVM>(
       init: HomeVM(),
       builder: (c) {
@@ -100,43 +98,43 @@ class FeaturedProducts extends StatelessWidget {
                     ),
                   ),
                 ),
-              VisibilityDetector(
-                key: Key('browseMoreProductsText'),
-                onVisibilityChanged: (info) {
-                  if (info.visibleFraction > 0.5) {
-                    c.isBrowseMoreVisible = true;
-                    c.update();
-                  } else {
-                    c.isBrowseMoreVisible = false;
-                    c.update();
-                  }
-                },
-                child: Column(
-                  children: [
-                    AppText(
-                      text: 'Browse More \nProducts',
-                      textAlign: TextAlign.center,
-                      size: 48.0,
-                      color: AppColors.white,
-                      fontFamily: AppFonts.gaby,
-                      fontWeight: FontWeight.bold,
-                    ).animate(target: c.isBrowseMoreVisible ? 1 : 0).fadeIn(duration: 1000.ms),
-                    SizedBox(height: 20.0),
-                    ElevatedButton(
-                      onPressed: () {
-                        Get.toNamed(AppRoutes.products);
-                      },
-                      style: ElevatedButton.styleFrom(
-                        shape: CircleBorder(),
-                        padding: EdgeInsets.all(20),
-                        backgroundColor: AppColors.primaryColor, // Button color
-                      ),
-                      child: Icon(Icons.arrow_forward, color: AppColors.secondaryColor),
-                    ).animate(target: c.isBrowseMoreVisible ? 1 : 0).fadeIn(duration: 1000.ms),
-                  ],
-                ),
-              ),
-              SizedBox(height: 16),
+              // VisibilityDetector(
+              //   key: Key('browseMoreProductsText'),
+              //   onVisibilityChanged: (info) {
+              //     if (info.visibleFraction > 0.5) {
+              //       c.isBrowseMoreVisible = true;
+              //       c.update();
+              //     } else {
+              //       c.isBrowseMoreVisible = false;
+              //       c.update();
+              //     }
+              //   },
+              //   child: Column(
+              //     children: [
+              //       AppText(
+              //         text: 'Browse More \nProducts',
+              //         textAlign: TextAlign.center,
+              //         size: 48.0,
+              //         color: AppColors.white,
+              //         fontFamily: AppFonts.gaby,
+              //         fontWeight: FontWeight.bold,
+              //       ).animate(target: c.isBrowseMoreVisible ? 1 : 0).fadeIn(duration: 1000.ms),
+              //       SizedBox(height: 20.0),
+              //       ElevatedButton(
+              //         onPressed: () {
+              //           Get.toNamed(AppRoutes.products);
+              //         },
+              //         style: ElevatedButton.styleFrom(
+              //           shape: CircleBorder(),
+              //           padding: EdgeInsets.all(20),
+              //           backgroundColor: AppColors.primaryColor, // Button color
+              //         ),
+              //         child: Icon(Icons.arrow_forward, color: AppColors.secondaryColor),
+              //       ).animate(target: c.isBrowseMoreVisible ? 1 : 0).fadeIn(duration: 1000.ms),
+              //     ],
+              //   ),
+              // ),
+              // SizedBox(height: 16),
             ],
           ),
         );

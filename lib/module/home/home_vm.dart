@@ -23,9 +23,8 @@ class HomeVM extends GetxController {
     Product(imageUrl: 'assets/images/product1.png', description: AppStrings.loremIpsum),
     Product(imageUrl: 'assets/images/product2.png', description: AppStrings.loremIpsum),
     Product(imageUrl: 'assets/images/product3.png', description: AppStrings.loremIpsum),
-    Product(imageUrl: 'assets/images/product3.png', description: AppStrings.loremIpsum),
   ];
-  List<bool> isProductVisibleList = [false, false, false, false];
+  List<bool> isProductVisibleList = [false, false, false];
 
   // Function to scroll to a specific section
   void scrollToSection(GlobalKey key) {

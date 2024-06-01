@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:food_portfolio/resources/app_colors.dart';
+import 'package:food_portfolio/resources/app_images.dart';
 import 'package:food_portfolio/utils/widgets/app_text.dart';
 
 class NavigationHeader extends StatelessWidget {
@@ -28,11 +29,15 @@ class NavigationHeader extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           // Company Logo
-          AppText(
-            text: 'Company Logo',
-            size: 24.0,
-            fontWeight: FontWeight.bold,
-            color: AppColors.white, // Replace with appropriate color
+          Container(
+            height: 64,
+            width: 240,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage(Appimages.companyLogo),
+                fit: BoxFit.fill,
+              ),
+            ),
           ),
           // Navigation Links
           Row(
