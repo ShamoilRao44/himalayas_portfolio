@@ -1,19 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <!--
-    If you are serving your web app in a path other than the root, change the
-    href value below to reflect the base path you are serving from.
-
-    The path provided below has to start and end with a slash "/" in order for
-    it to work correctly.
-
-    For more details:
-    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
-
-    This is a placeholder for base href that will be replaced by the value of
-    the `--base-href` argument provided to `flutter build`.
-  -->
     <base href="$FLUTTER_BASE_HREF" />
 
     <meta charset="UTF-8" />
@@ -31,34 +18,41 @@
 
     <title>food_portfolio</title>
     <link rel="manifest" href="manifest.json" />
+  </head>
+  <body>
+    <script src="flutter_bootstrap.js" async></script>
 
     <script type="module">
       // Import the functions you need from the SDKs you need
-      import { initializeApp } from "firebase/app";
-      import { getAnalytics } from "firebase/analytics";
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
       // TODO: Add SDKs for Firebase products that you want to use
       // https://firebase.google.com/docs/web/setup#available-libraries
 
       // Your web app's Firebase configuration
       // For Firebase JS SDK v7.20.0 and later, measurementId is optional
       const firebaseConfig = {
-        apiKey: "AIzaSyB5-EmQknIB7_-HDvlqihdrF5ipqSCQC9s",
-        authDomain: "natural-himalaya.firebaseapp.com",
-        projectId: "natural-himalaya",
-        storageBucket: "natural-himalaya.appspot.com",
-        messagingSenderId: "375185712190",
-        appId: "1:375185712190:web:d59361e871dbab32761d6f",
-        measurementId: "G-W4M8W4V23N",
+        apiKey: "AIzaSyBRJBet9ALY_3H4z94UR3Q6CmSdsh0Yv3c",
+        authDomain: "natural-himalaya-bb785.firebaseapp.com",
+        projectId: "natural-himalaya-bb785",
+        storageBucket: "natural-himalaya-bb785.appspot.com",
+        messagingSenderId: "918681058677",
+        appId: "1:918681058677:web:40fb1f0832dad5adcbe73c",
+        measurementId: "G-EN2ZH34JFK",
       };
 
       // Initialize Firebase
       const app = initializeApp(firebaseConfig);
       const analytics = getAnalytics(app);
     </script>
-
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9a0_Lf-ESk_HGqf_flsofxCX6FVNolFc"></script>
-  </head>
-  <body>
-    <script src="flutter_bootstrap.js" async></script>
+    <!-- <script
+      type="module"
+      src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"
+    ></script> -->
+    <script
+      type="module"
+      src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"
+    ></script>
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZUd8BVUU-iFexXhKABIqn-NC5dlb-2dU"></script> -->
   </body>
 </html>

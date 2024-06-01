@@ -8,6 +8,7 @@ class AppColors {
   static const textColor = Color(0xFF333333);
   static const black = Color(0xff000000);
   static const white = Color(0xFFFFFFFF);
+  static const red = Color(0xFFF44336);
   static const transparent = Color(0x00000000);
   static const softYellow = Color(0xFFFFF096);
   static const mintGreen = Color.fromARGB(255, 152, 255, 152);

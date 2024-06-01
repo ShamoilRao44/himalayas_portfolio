@@ -25,7 +25,7 @@ class AppPages {
     ),
     GetPage(
       name: AppRoutes.contact,
-      page: () => const ContactUsView(),
+      page: () =>  ContactUsView(),
       binding: ContactUsBinding(),
     ),
   ];
