@@ -28,33 +28,36 @@ class HomeView extends StatelessWidget {
                 width: wdth,
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage(Appimages.heroSectionBG),
+                    image: AssetImage(Appimages.pageBG),
                     fit: BoxFit.fill,
                   ),
                 ),
               ),
               SingleChildScrollView(
                 controller: c.scrollController,
-                child: Column(
-                  children: [
-                    Container(
-                      key: c.homeKey,
-                      child: HeroSection(),
-                    ),
-                    Container(
-                      key: c.aboutUsKey,
-                      child: AboutUsSnapshot(),
-                    ),
-                    Container(
-                      key: c.productsKey,
-                      child: FeaturedProducts(),
-                    ),
-                    Container(
-                      key: c.contactKey,
-                      child: ContactInfo(),
-                    ),
-                    Footer(),
-                  ],
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 32.0),
+                  child: Column(
+                    children: [
+                      Container(
+                        key: c.homeKey,
+                        child: HeroSection(),
+                      ),
+                      Container(
+                        key: c.aboutUsKey,
+                        child: AboutUsSnapshot(),
+                      ),
+                      Container(
+                        key: c.productsKey,
+                        child: FeaturedProducts(),
+                      ),
+                      Container(
+                        key: c.contactKey,
+                        child: ContactInfo(),
+                      ),
+                      Footer(),
+                    ],
+                  ),
                 ),
               ),
               // Positioned Navigation Header to stay on top

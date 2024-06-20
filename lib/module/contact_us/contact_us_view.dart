@@ -5,6 +5,7 @@ import 'package:food_portfolio/resources/app_colors.dart';
 import 'package:food_portfolio/resources/app_fonts.dart';
 import 'package:food_portfolio/resources/app_strings.dart';
 import 'package:food_portfolio/utils/widgets/app_text.dart';
+import 'package:food_portfolio/utils/widgets/navigation_header.dart';
 import 'package:get/get.dart';
 import 'contact_us_vm.dart';
 import 'widgets/hero_section.dart'; // Updated import
@@ -19,28 +20,40 @@ class ContactUsView extends StatelessWidget {
       init: ContactUsVM(),
       builder: (c) {
         return Scaffold(
-          body: SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                HeroSection(), // Updated widget name
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 40.0, vertical: 32.0),
-                  child: AppText(
-                    text: AppStrings.loremIpsum,
-                    maxLines: 3,
-                    size: 26,
-                    textAlign: TextAlign.center,
-                    fontFamily: AppFonts.gaby,
-                    fontWeight: FontWeight.w500,
-                    color: AppColors.black,
+          body: Column(
+            children: [
+              NavigationHeader(
+                onHomePressed: () => Get.toNamed('/home'),
+                onProductsPressed: () => Get.toNamed('/products'),
+                onAboutUsPressed: () => Get.toNamed('/about'),
+                onContactPressed: () => Get.toNamed('/contact'),
+              ),
+              Expanded(
+                child: SingleChildScrollView(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      HeroSection(), // Updated widget name
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 40.0, vertical: 32.0),
+                        child: AppText(
+                          text: AppStrings.loremIpsum,
+                          maxLines: 3,
+                          size: 30,
+                          textAlign: TextAlign.center,
+                          fontFamily: AppFonts.cinzel,
+                          fontWeight: FontWeight.w500,
+                          color: AppColors.textColor2,
+                        ),
+                      ),
+                      LocationDetailsSection(),
+                      QuickContactSection(),
+                      Footer(),
+                    ],
                   ),
                 ),
-                LocationDetailsSection(),
-                QuickContactSection(),
-                Footer(),
-              ],
-            ),
+              ),
+            ],
           ),
         );
       },

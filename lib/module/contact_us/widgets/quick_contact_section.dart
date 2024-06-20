@@ -1,6 +1,7 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, unused_element
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:food_portfolio/resources/app_colors.dart';
 import 'package:get/get.dart';
 import 'package:food_portfolio/module/contact_us/contact_us_vm.dart';
@@ -16,6 +17,7 @@ class QuickContactSection extends StatelessWidget {
           child: Container(
             width: 800,
             decoration: BoxDecoration(
+              color: AppColors.primaryColor,
               border: Border.all(
                 color: AppColors.primaryColor,
                 width: 2,
@@ -37,7 +39,13 @@ class QuickContactSection extends StatelessWidget {
                     SizedBox(height: 24),
                     _buildTextField('Name', controller: c.nameController),
                     SizedBox(height: 16),
-                    _buildTextField('Phone Number', controller: c.phoneController),
+                    _buildTextField(
+                      'Phone Number',
+                      controller: c.phoneController,
+                      inputFormatters: [
+                        FilteringTextInputFormatter.digitsOnly,
+                      ],
+                    ),
                     SizedBox(height: 16),
                     _buildTextField('Email', email: true, controller: c.emailController),
                     SizedBox(height: 16),
@@ -46,22 +54,33 @@ class QuickContactSection extends StatelessWidget {
                     _buildTextField('Message', maxLines: 5, controller: c.messageController),
                     SizedBox(height: 24),
                     ElevatedButton(
-                      onPressed: () async {
-                        if (c.formKey.currentState!.validate()) {
-                          debugPrint('enter in form');
-                          c.submitForm();
-                        } else {
-                          debugPrint('Error in form');
-                        }
-                      },
+                      onPressed: c.isloading
+                          ? null
+                          : () async {
+                              if (c.formKey.currentState!.validate()) {
+                                debugPrint('enter in form');
+                                c.submitQuickContact(context);
+                              } else {
+                                debugPrint('Error in form');
+                              }
+                            },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: AppColors.secondaryColor,
                       ),
-                      child: AppText(
-                        text: 'Submit',
-                        size: 18.0,
-                        color: Colors.white,
-                      ),
+                      child: c.isloading
+                          ? SizedBox(
+                              width: 20,
+                              height: 20,
+                              child: CircularProgressIndicator(
+                                valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+                                strokeWidth: 2.0,
+                              ),
+                            )
+                          : AppText(
+                              text: 'Submit',
+                              size: 18.0,
+                              color: Colors.white,
+                            ),
                     ),
                   ],
                 ),
@@ -73,28 +92,41 @@ class QuickContactSection extends StatelessWidget {
     });
   }
 
-  Widget _buildTextField(String label, {bool email = false, int maxLines = 1, required TextEditingController controller}) {
+  Widget _buildTextField(
+    String label, {
+    bool email = false,
+    int maxLines = 1,
+    required TextEditingController controller,
+    List<TextInputFormatter>? inputFormatters,
+  }) {
     return TextFormField(
       controller: controller,
       maxLines: maxLines,
+      inputFormatters: inputFormatters,
       decoration: InputDecoration(
-        labelText: label,
+        hintText: label,
+        filled: true,
+        fillColor: AppColors.white,
         enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10),
           borderSide: BorderSide(
             color: AppColors.primaryColor,
           ),
         ),
         focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10),
           borderSide: BorderSide(
             color: AppColors.primaryColor,
           ),
         ),
         errorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10),
           borderSide: BorderSide(
             color: AppColors.red,
           ),
         ),
         focusedErrorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10),
           borderSide: BorderSide(
             color: AppColors.red,
           ),

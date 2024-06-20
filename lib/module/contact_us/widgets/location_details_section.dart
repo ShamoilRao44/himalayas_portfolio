@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:food_portfolio/resources/app_strings.dart';
 import 'package:food_portfolio/utils/widgets/app_text.dart';
 // import 'package:google_maps_flutter/google_maps_flutter.dart';
 
@@ -11,12 +12,14 @@ class LocationDetailsSection extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(16.0),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Expanded(
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Row(
+                  mainAxisSize: MainAxisSize.min,
                   children: [
                     AppText(
                       text: 'Opening Hours: ',
@@ -32,6 +35,7 @@ class LocationDetailsSection extends StatelessWidget {
                 ),
                 SizedBox(height: 16),
                 Row(
+                  mainAxisSize: MainAxisSize.min,
                   children: [
                     AppText(
                       text: 'Phone: ',
@@ -47,6 +51,7 @@ class LocationDetailsSection extends StatelessWidget {
                 ),
                 SizedBox(height: 16),
                 Row(
+                  mainAxisSize: MainAxisSize.min,
                   children: [
                     AppText(
                       text: 'Email: ',
@@ -63,36 +68,41 @@ class LocationDetailsSection extends StatelessWidget {
                 SizedBox(height: 16),
                 AppText(
                   text: 'Address: ',
-                  size: 20.0,
+                  size: 24.0,
                   fontWeight: FontWeight.bold,
                 ),
                 SizedBox(height: 16),
                 AppText(
-                  text: '123 Frozen Food St, Cold City',
+                  text: AppStrings.address1,
+                  size: 20.0,
+                  fontWeight: FontWeight.w500,
+                ),
+                AppText(
+                  text: AppStrings.address2,
                   size: 20.0,
                   fontWeight: FontWeight.w500,
                 ),
               ],
             ),
           ),
-          Expanded(
-            child: Container(
-              height: 480,
-              color: Colors.grey[300], // Placeholder for the map
-              // child: GoogleMap(
-              //   initialCameraPosition: CameraPosition(
-              //     target: myLatLng,
-              //     zoom: 16,
-              //   ),
-              //   markers: {
-              //     Marker(
-              //       markerId: MarkerId('1'),
-              //       position: myLatLng,
-              //     ),
-              //   },
-              // ),
-            ),
-          ),
+          // Expanded(
+          //   child: Container(
+          //     height: 480,
+          //     color: Colors.grey[300], // Placeholder for the map
+          //     // child: GoogleMap(
+          //     //   initialCameraPosition: CameraPosition(
+          //     //     target: myLatLng,
+          //     //     zoom: 16,
+          //     //   ),
+          //     //   markers: {
+          //     //     Marker(
+          //     //       markerId: MarkerId('1'),
+          //     //       position: myLatLng,
+          //     //     ),
+          //     //   },
+          //     // ),
+          //   ),
+          // ),
         ],
       ),
     );

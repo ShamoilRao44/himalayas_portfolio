@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:food_portfolio/resources/app_images.dart';
 import 'package:food_portfolio/resources/app_strings.dart';
 import 'package:get/get.dart';
 
@@ -20,11 +21,12 @@ class HomeVM extends GetxController {
   bool isCntctAnmTrig = false;
 
   List<Product> productsList = [
-    Product(imageUrl: 'assets/images/product1.png', description: AppStrings.loremIpsum),
-    Product(imageUrl: 'assets/images/product2.png', description: AppStrings.loremIpsum),
-    Product(imageUrl: 'assets/images/product3.png', description: AppStrings.loremIpsum),
+    Product(imageUrl: Appimages.product1, description: AppStrings.loremIpsum),
+    Product(imageUrl: Appimages.product2, description: AppStrings.loremIpsum),
+    Product(imageUrl: Appimages.product3, description: AppStrings.loremIpsum),
+    Product(imageUrl: Appimages.product4, description: AppStrings.loremIpsum),
   ];
-  List<bool> isProductVisibleList = [false, false, false];
+  List<bool> isProductVisibleList = [false, false, false, false];
 
   // Function to scroll to a specific section
   void scrollToSection(GlobalKey key) {

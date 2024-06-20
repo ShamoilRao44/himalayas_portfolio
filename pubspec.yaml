@@ -12,14 +12,16 @@ dependencies:
   flutter:
     sdk: flutter
   get: ^4.6.6
+  http:
   flutter_animate: ^4.5.0
   visibility_detector: ^0.3.3
   url_launcher: ^6.0.20
-  firebase_core:
-  cloud_firestore:
-  firebase_auth:
+  # firebase_core:
+  # cloud_firestore:
+  # firebase_auth:
   # google_maps_flutter: ^2.6.1
   cupertino_icons: ^1.0.6
+  responsive_builder:
 
 dev_dependencies:
   flutter_test:
@@ -41,6 +43,12 @@ flutter:
     - family: Gaby
       fonts:
         - asset: assets/fonts/Gaby.ttf
+    - family: Cinzel
+      fonts:
+        - asset: assets/fonts/Cinzel.ttf
+    - family: Sweet-Peas
+      fonts:
+        - asset: assets/fonts/Sweet-Peas.ttf
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

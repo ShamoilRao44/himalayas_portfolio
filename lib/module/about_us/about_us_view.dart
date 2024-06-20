@@ -123,7 +123,7 @@ class AboutUsView extends StatelessWidget {
                           ),
                         ),
                       ),
-                      SizedBox(height: 20),
+                      SizedBox(height: 48),
                       // Footer
                       Footer(),
                     ],
@@ -157,7 +157,7 @@ class AboutUsView extends StatelessWidget {
               child: AppText(
                 text: text,
                 size: 18.0,
-                color: AppColors.white,
+                color: AppColors.textColor,
                 fontWeight: FontWeight.w400,
                 maxLines: 6,
               ),
