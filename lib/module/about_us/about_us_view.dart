@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_portfolio/resources/app_fonts.dart';
 import 'package:food_portfolio/resources/app_images.dart';
+import 'package:food_portfolio/resources/app_routes.dart';
 import 'package:food_portfolio/resources/app_strings.dart';
 import 'package:get/get.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -31,6 +32,7 @@ class AboutUsView extends StatelessWidget {
                 onProductsPressed: () => Get.toNamed('/products'),
                 onAboutUsPressed: () => Get.toNamed('/about'),
                 onContactPressed: () => Get.toNamed('/contact'),
+                onBlogPressed: () => Get.toNamed(AppRoutes.blog),
               ),
               Expanded(
                 child: SingleChildScrollView(
@@ -41,27 +43,27 @@ class AboutUsView extends StatelessWidget {
                         children: [
                           Container(
                             width: wdth,
-                            height: hght * 0.7,
+                            height: hght * 0.9,
                             decoration: BoxDecoration(
                               image: DecorationImage(
-                                image: AssetImage(Appimages.aboutUsBG),
+                                image: AssetImage(Appimages.card1),
                                 fit: BoxFit.fill,
                               ),
                             ),
                           ).animate().fadeIn(duration: 600.ms, curve: Curves.easeIn),
                           Container(
                             width: wdth,
-                            height: hght * 0.7,
+                            height: hght * 0.9,
                             alignment: Alignment.center,
                             decoration: BoxDecoration(
-                              color: AppColors.black.withOpacity(0.7),
+                              color: AppColors.black.withOpacity(0.8),
                             ),
                             child: AppText(
                               text: 'About Us',
                               size: 80.0,
                               fontWeight: FontWeight.bold,
                               fontFamily: AppFonts.gaby,
-                              color: Colors.white,
+                              color: AppColors.primaryColor,
                             ).animate().fadeIn(duration: 800.ms, curve: Curves.easeIn),
                           ),
                         ],
@@ -96,7 +98,7 @@ class AboutUsView extends StatelessWidget {
                         child: Padding(
                           padding: EdgeInsets.symmetric(horizontal: 120.0),
                           child: _buildCard(
-                              imagePath: Appimages.card1, // Replace with your image asset
+                              imagePath: Appimages.aboutUsBG, // Replace with your image asset
                               text: AppStrings.loremIpsum,
                               imageLeft: true,
                               target: vm.isFirstCardVisible,

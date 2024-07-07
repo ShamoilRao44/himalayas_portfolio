@@ -1,7 +1,9 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:food_portfolio/module/blog/blog_vm.dart';
 import 'package:food_portfolio/resources/app_colors.dart';
 import 'package:food_portfolio/resources/app_strings.dart';
 import 'package:responsive_builder/responsive_builder.dart';
@@ -19,27 +21,19 @@ class HeroSection extends StatelessWidget {
       builder: (context, sizingInformation) {
         //MOBILE VIEW
         if (sizingInformation.deviceScreenType == DeviceScreenType.mobile) {
-          return GetBuilder<HomeVM>(
+          return GetBuilder<BlogVM>(
             builder: (c) {
               var hght = MediaQuery.of(context).size.height;
               var wdth = MediaQuery.of(context).size.width;
               return VisibilityDetector(
                 key: Key('our_products_visibility_detector'),
-                onVisibilityChanged: (visibilityInfo) {
-                  if (visibilityInfo.visibleFraction > 0.2) {
-                    c.isHeroSection = true;
-                    c.update();
-                  } else {
-                    c.isHeroSection = false;
-                    c.update();
-                  }
-                },
+                onVisibilityChanged: (visibilityInfo) {},
                 child: Container(
                   height: hght * 0.5,
                   width: wdth,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage(Appimages.heroSectionBG), // Replace with your image asset
+                      image: AssetImage(Appimages.blogBG), // Replace with your image asset
                       fit: BoxFit.fill,
                     ),
                   ),
@@ -83,27 +77,19 @@ class HeroSection extends StatelessWidget {
         }
         //DESKTOP VIEW
         else {
-          return GetBuilder<HomeVM>(
+          return GetBuilder<BlogVM>(
             builder: (c) {
               var hght = MediaQuery.of(context).size.height;
               var wdth = MediaQuery.of(context).size.width;
               return VisibilityDetector(
                 key: Key('our_products_visibility_detector'),
-                onVisibilityChanged: (visibilityInfo) {
-                  if (visibilityInfo.visibleFraction > 0.2) {
-                    c.isHeroSection = true;
-                    c.update();
-                  } else {
-                    c.isHeroSection = false;
-                    c.update();
-                  }
-                },
+                onVisibilityChanged: (visibilityInfo) {},
                 child: Container(
-                  height: wdth > 1000 ? hght : hght * 0.5,
+                  height: wdth > 1000 ? hght * 0.9 : hght * 0.5,
                   width: wdth,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage(Appimages.heroSectionBG), // Replace with your image asset
+                      image: AssetImage(Appimages.blogBG), // Replace with your image asset
                       fit: BoxFit.fill,
                     ),
                   ),
@@ -114,42 +100,23 @@ class HeroSection extends StatelessWidget {
                         width: wdth,
                         height: hght,
                         decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                            colors: [
-                              AppColors.black.withOpacity(0.3),
-                              AppColors.black.withOpacity(0.6),
-                              AppColors.black.withOpacity(0.7),
-                            ],
-                          ),
-                        ),
+                            // gradient: LinearGradient(
+                            //   colors: [
+                            //     AppColors.black.withOpacity(0.7),
+                            //   ],
+                            // ),
+                            color: AppColors.black.withOpacity(0.7)),
                       ),
-                      // Company Name and Slogan
-                      Positioned(
-                        right: 80,
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Text(
-                              AppStrings.companyName,
-                              style: TextStyle(
-                                fontSize: 120,
-                                fontFamily: AppFonts.hunters,
-                                color: AppColors.primaryColor,
-                                fontWeight: FontWeight.normal,
-                              ),
-                            ).animate().slide(begin: Offset(2, 0), duration: 1000.ms, curve: Curves.easeOut),
-                            SizedBox(height: 24),
-                            Text(
-                              AppStrings.slogan,
-                              style: TextStyle(
-                                fontSize: 32.0,
-                                color: AppColors.primaryColor,
-                                fontFamily: AppFonts.montserratRegular,
-                              ),
-                            ).animate().slide(begin: Offset(2, 0), duration: 1000.ms, curve: Curves.easeOut),
-                          ],
+                      // BLOG TEXT
+                      Text(
+                        "Our Blog",
+                        style: TextStyle(
+                          fontSize: 120,
+                          fontFamily: AppFonts.hunters,
+                          color: AppColors.primaryColor,
+                          fontWeight: FontWeight.normal,
                         ),
-                      ),
+                      ).animate().slide(begin: Offset(2, 0), duration: 1000.ms, curve: Curves.easeOut),
                     ],
                   ),
                 ),

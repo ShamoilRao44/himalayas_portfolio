@@ -18,6 +18,7 @@ class AboutUsSnapshot extends StatelessWidget {
     return ResponsiveBuilder(
       builder: (context, sizingInformation) {
         if (sizingInformation.deviceScreenType == DeviceScreenType.mobile) {
+          //MOBILE VIEW
           return GetBuilder<HomeVM>(
             builder: (c) {
               var hght = MediaQuery.of(context).size.height;
@@ -56,7 +57,7 @@ class AboutUsSnapshot extends StatelessWidget {
                     AppText(
                       text: 'About Us',
                       size: 64.0,
-                      fontFamily: AppFonts.gaby,
+                      fontFamily: AppFonts.hunters,
                       fontWeight: FontWeight.bold,
                       color: AppColors.secondaryColor,
                     ).animate(target: c.imageVisible ? 1 : 0).fadeIn(duration: 700.ms, curve: Curves.easeOut),
@@ -130,6 +131,7 @@ class AboutUsSnapshot extends StatelessWidget {
             },
           );
         } else {
+          //DESKTOP VIEW
           return GetBuilder<HomeVM>(
             builder: (c) {
               var hght = MediaQuery.of(context).size.height;
@@ -150,8 +152,8 @@ class AboutUsSnapshot extends StatelessWidget {
                           AppText(
                             text: 'About Us',
                             size: 64.0,
-                            fontFamily: AppFonts.gaby,
-                            fontWeight: FontWeight.bold,
+                            fontFamily: AppFonts.hunters,
+                            fontWeight: FontWeight.normal,
                             color: AppColors.secondaryColor,
                           ).animate(target: c.imageVisible ? 1 : 0).fadeIn(duration: 700.ms, curve: Curves.easeOut),
                           SizedBox(height: 20),

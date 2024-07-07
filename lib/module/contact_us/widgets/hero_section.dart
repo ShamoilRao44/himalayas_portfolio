@@ -26,11 +26,11 @@ class HeroSection extends StatelessWidget {
           alignment: Alignment.center,
           child: AppText(
             text: 'Visit Us',
-            size: 80.0,
-            fontFamily: AppFonts.gaby,
-            fontWeight: FontWeight.bold,
+            size: 160.0,
+            fontFamily: AppFonts.hunters,
+            fontWeight: FontWeight.normal,
             color: AppColors.primaryColor,
-          ).animate().slide(begin: Offset(0, 2), end: Offset(0, 0), duration: 800.ms),
+          ).animate().slide(begin: Offset(0, 1), end: Offset(0, 0), duration: 800.ms),
         ),
       ],
     );

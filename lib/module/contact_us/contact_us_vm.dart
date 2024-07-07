@@ -20,48 +20,21 @@ class ContactUsVM extends GetxController {
   final TextEditingController subjectController = TextEditingController();
   final TextEditingController messageController = TextEditingController();
 
+  var selectedProduct = ''.obs;
+  List<String> productList = ['Mix Veg', 'Green Peas', 'Sweet Corn', 'Hara Chana'];
+  List<String> productsInterested = [];
+
+  void toggleProductInterested(String product) {
+    if (productsInterested.contains(product)) {
+      productsInterested.remove(product);
+    } else {
+      productsInterested.add(product);
+    }
+    update(); // Notify the UI to update
+  }
+
   bool isloading = false;
 
-  // Future<void> submitForm() async {
-  //   debugPrint('Entered submitform()');
-
-  //   CollectionReference contacts = FirebaseFirestore.instance.collection('contacts');
-
-  //   await contacts.add({
-  //     'name': nameController.text,
-  //     'phone': phoneController.text,
-  //     'email': emailController.text,
-  //     'subject': subjectController.text,
-  //     'message': messageController.text,
-  //     'timestamp': FieldValue.serverTimestamp(),
-  //   }).then(
-  //     (value) {
-  //       // Show success message
-  //       ScaffoldMessenger.of(formKey.currentContext!).showSnackBar(
-  //         SnackBar(
-  //           content: AppText(
-  //             text: 'Your message has been sent successfully!',
-  //             size: 16.0,
-  //             color: Colors.white,
-  //           ),
-  //           backgroundColor: Colors.green,
-  //         ),
-  //       );
-  //       formKey.currentState!.reset();
-  //     },
-  //   ).onError((error, stacktrace) {
-  //     ScaffoldMessenger.of(formKey.currentContext!).showSnackBar(
-  //       SnackBar(
-  //         content: AppText(
-  //           text: 'Your message not sent successfully!',
-  //           size: 16.0,
-  //           color: Colors.white,
-  //         ),
-  //         backgroundColor: Colors.red,
-  //       ),
-  //     );
-  //   });
-  // }
 
   Future<void> submitQuickContact(BuildContext context) async {
     isloading = true;
@@ -73,17 +46,13 @@ class ContactUsVM extends GetxController {
     data['email'] = emailController.text;
     data['subject'] = subjectController.text;
     data['message'] = messageController.text;
+    data['product_interested'] = productsInterested;
 
     debugPrint(data.toString());
 
     curi.createQuickContact(data).then((res) {
       isloading = false;
-      nameController.clear();
-      phoneController.clear();
-      emailController.clear();
-      subjectController.clear();
-      messageController.clear();
-      update();
+      clearForm();
       ScaffoldMessenger.of(context).showSnackBar(
         appSnackbar(
           msg: 'your message is sent succesfully!',
@@ -102,5 +71,15 @@ class ContactUsVM extends GetxController {
         ),
       );
     });
+  }
+
+  void clearForm() {
+    nameController.clear();
+    phoneController.clear();
+    emailController.clear();
+    subjectController.clear();
+    messageController.clear();
+    productsInterested.clear();
+    update();
   }
 }

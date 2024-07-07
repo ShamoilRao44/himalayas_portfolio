@@ -125,9 +125,9 @@ class FeaturedProducts extends StatelessWidget {
                     },
                     child: AppText(
                       text: 'Our Products',
-                      size: 48.0,
-                      fontFamily: AppFonts.gaby,
-                      fontWeight: FontWeight.bold,
+                      size: 64,
+                      fontFamily: AppFonts.hunters,
+                      fontWeight: FontWeight.normal,
                       color: Colors.white,
                     ).animate(target: c.isOurProductTextVisible ? 1 : 0).fadeIn(duration: 800.ms, curve: Curves.easeIn),
                   ),

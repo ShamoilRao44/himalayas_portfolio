@@ -8,5 +8,6 @@ class AppStrings {
   static const address1 = "356/2, Udyog Nagar, Nemawar Road, Indore";
   static const address2 = "61/2, Prakash Nagar, Navlakha Square, Indore";
   static const companyName = "Natural Himalaya";
-  static const slogan = "Frozen Foods";
+  // static const slogan = "Frozen Foods";
+  static const slogan = "Procured directly from Farmers";
 }

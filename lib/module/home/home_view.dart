@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:food_portfolio/resources/app_images.dart';
+import 'package:food_portfolio/resources/app_routes.dart';
 import 'package:get/get.dart';
 
 import 'package:food_portfolio/utils/widgets/footer.dart';
@@ -70,6 +71,7 @@ class HomeView extends StatelessWidget {
                   onProductsPressed: () => c.scrollToSection(c.productsKey),
                   onAboutUsPressed: () => c.scrollToSection(c.aboutUsKey),
                   onContactPressed: () => c.scrollToSection(c.contactKey),
+                  onBlogPressed: () => Get.toNamed(AppRoutes.blog),
                 ),
               ),
             ],

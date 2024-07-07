@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:food_portfolio/resources/app_colors.dart';
+import 'package:food_portfolio/resources/app_fonts.dart';
 import 'package:get/get.dart';
 import 'package:food_portfolio/module/contact_us/contact_us_vm.dart';
 import 'package:food_portfolio/utils/widgets/app_text.dart'; // Update the path as per your project structure
@@ -33,8 +34,9 @@ class QuickContactSection extends StatelessWidget {
                   children: [
                     AppText(
                       text: 'Quick Contact',
-                      size: 32.0,
-                      fontWeight: FontWeight.bold,
+                      size: 56,
+                      fontFamily: AppFonts.hunters,
+                      fontWeight: FontWeight.normal,
                     ),
                     SizedBox(height: 24),
                     _buildTextField('Name', controller: c.nameController),
@@ -50,6 +52,15 @@ class QuickContactSection extends StatelessWidget {
                     _buildTextField('Email', email: true, controller: c.emailController),
                     SizedBox(height: 16),
                     _buildTextField('Subject', controller: c.subjectController),
+                    SizedBox(height: 16),
+                    CustomDropdownTextField(
+                      selectedProducts: c.productsInterested,
+                      productList: c.productList,
+                      onSelected: (newValue) {
+                        c.toggleProductInterested(newValue);
+                        c.update();
+                      },
+                    ),
                     SizedBox(height: 16),
                     _buildTextField('Message', maxLines: 5, controller: c.messageController),
                     SizedBox(height: 24),
@@ -141,6 +152,82 @@ class QuickContactSection extends StatelessWidget {
         // }
         return null;
       },
+    );
+  }
+}
+
+class CustomDropdownTextField extends StatelessWidget {
+  final List<String> selectedProducts;
+  final List<String> productList;
+  final ValueChanged<String> onSelected;
+
+  const CustomDropdownTextField({
+    required this.selectedProducts,
+    required this.productList,
+    required this.onSelected,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return TextFormField(
+      controller: TextEditingController(
+        text: selectedProducts.join(', '),
+      ),
+      readOnly: true,
+      decoration: InputDecoration(
+        hintText: 'Select the products you are interested in',
+        suffixIcon: PopupMenuButton<String>(
+          icon: Icon(Icons.arrow_drop_down),
+          onSelected: (String value) {
+            onSelected(value);
+          },
+          itemBuilder: (BuildContext context) {
+            return productList.map((String product) {
+              return PopupMenuItem<String>(
+                value: product,
+                child: Row(
+                  children: [
+                    Checkbox(
+                      value: selectedProducts.contains(product),
+                      onChanged: (bool? checked) {
+                        onSelected(product);
+                        Navigator.of(context).pop(); // Close the dropdown
+                      },
+                    ),
+                    Text(product),
+                  ],
+                ),
+              );
+            }).toList();
+          },
+        ),
+        filled: true,
+        fillColor: AppColors.white,
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10),
+          borderSide: BorderSide(
+            color: AppColors.primaryColor,
+          ),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10),
+          borderSide: BorderSide(
+            color: AppColors.primaryColor,
+          ),
+        ),
+        errorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10),
+          borderSide: BorderSide(
+            color: AppColors.red,
+          ),
+        ),
+        focusedErrorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10),
+          borderSide: BorderSide(
+            color: AppColors.red,
+          ),
+        ),
+      ),
     );
   }
 }

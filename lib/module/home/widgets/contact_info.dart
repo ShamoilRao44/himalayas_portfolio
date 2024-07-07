@@ -18,7 +18,7 @@ class ContactInfo extends StatelessWidget {
     var hght = MediaQuery.of(context).size.height;
     return ResponsiveBuilder(
       builder: (context, sizingInformation) {
-        //mobile Layout
+        //MOBILE VIEW
         if (sizingInformation.deviceScreenType == DeviceScreenType.mobile) {
           return GetBuilder<HomeVM>(
             builder: (c) {
@@ -44,8 +44,8 @@ class ContactInfo extends StatelessWidget {
                         child: AppText(
                           text: 'Contact Us',
                           size: 48.0,
-                          fontFamily: AppFonts.gaby,
-                          fontWeight: FontWeight.bold,
+                          fontFamily: AppFonts.hunters,
+                          fontWeight: FontWeight.normal,
                           color: AppColors.secondaryColor,
                         ).animate(target: c.isCntctAnmTrig ? 1 : 0).fadeIn(duration: 600.ms, curve: Curves.easeIn),
                       ),
@@ -120,7 +120,7 @@ class ContactInfo extends StatelessWidget {
             },
           );
         }
-        //desktop Layout
+        //DESKTOP VIEW
         else {
           return GetBuilder<HomeVM>(
             builder: (c) {
@@ -147,8 +147,8 @@ class ContactInfo extends StatelessWidget {
                         child: AppText(
                           text: 'Contact Us',
                           size: 48.0,
-                          fontFamily: AppFonts.gaby,
-                          fontWeight: FontWeight.bold,
+                          fontFamily: AppFonts.hunters,
+                          fontWeight: FontWeight.normal,
                           color: AppColors.secondaryColor,
                         ).animate(target: c.isCntctAnmTrig ? 1 : 0).fadeIn(duration: 600.ms, curve: Curves.easeIn),
                       ),
@@ -164,7 +164,6 @@ class ContactInfo extends StatelessWidget {
                       ),
                       SizedBox(height: 40),
                       // Visit Us Button
-
                       MouseRegion(
                         onEnter: (event) {
                           c.isReadMoreButtonHovered = true;

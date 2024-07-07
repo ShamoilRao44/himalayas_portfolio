@@ -49,6 +49,9 @@ flutter:
     - family: Sweet-Peas
       fonts:
         - asset: assets/fonts/Sweet-Peas.ttf
+    - family: Hunters
+      fonts:
+        - asset: assets/fonts/Hunters.ttf
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

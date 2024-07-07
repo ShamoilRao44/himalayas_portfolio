@@ -1,3 +1,7 @@
+// ignore_for_file: prefer_const_constructors
+
+import 'package:food_portfolio/module/blog/blog_view.dart';
+import 'package:food_portfolio/module/blog/blog_vm.dart';
 import 'package:get/get.dart';
 import '../module/home/home_view.dart';
 import '../module/about_us/about_us_view.dart';
@@ -27,6 +31,12 @@ class AppPages {
       name: AppRoutes.contact,
       page: () =>  ContactUsView(),
       binding: ContactUsBinding(),
+    ),
+
+    GetPage(
+      name: AppRoutes.blog,
+      page: () =>  BlogView(),
+      binding: BlogBinding(),
     ),
   ];
 }

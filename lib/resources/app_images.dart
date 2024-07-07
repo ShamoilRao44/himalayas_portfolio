@@ -3,6 +3,7 @@ class Appimages {
   static const aboutUsBG = 'assets/images/about-us-bg.png';
   static const visitUsBG = 'assets/images/visit-us-bg.png';
   static const pageBG = 'assets/images/page-bg.png';
+  static const blogBG = 'assets/images/blog-bg.png';
   static const product1 = 'assets/images/product1.png';
   static const product2 = 'assets/images/product2.png';
   static const product3 = 'assets/images/product3.png';

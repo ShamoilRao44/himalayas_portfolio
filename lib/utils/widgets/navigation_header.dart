@@ -12,12 +12,14 @@ class NavigationHeader extends StatelessWidget {
   final VoidCallback onProductsPressed;
   final VoidCallback onAboutUsPressed;
   final VoidCallback onContactPressed;
+  final VoidCallback onBlogPressed;
 
   NavigationHeader({
     required this.onHomePressed,
     required this.onProductsPressed,
     required this.onAboutUsPressed,
     required this.onContactPressed,
+    required this.onBlogPressed,
   });
 
   @override
@@ -69,6 +71,7 @@ class NavigationHeader extends StatelessWidget {
                     _buildNavItem('Products', onProductsPressed),
                     _buildNavItem('About Us', onAboutUsPressed),
                     _buildNavItem('Contact', onContactPressed),
+                    _buildNavItem('Blog', onBlogPressed)
                   ],
                 ),
               ],
