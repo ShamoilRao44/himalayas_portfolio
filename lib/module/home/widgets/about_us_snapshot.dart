@@ -23,7 +23,6 @@ class AboutUsSnapshot extends StatelessWidget {
             builder: (c) {
               var hght = MediaQuery.of(context).size.height;
               return Container(
-                height: hght * 0.9,
                 padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 20.0),
                 color: Colors.white,
                 child: Column(
@@ -60,7 +59,9 @@ class AboutUsSnapshot extends StatelessWidget {
                       fontFamily: AppFonts.hunters,
                       fontWeight: FontWeight.bold,
                       color: AppColors.secondaryColor,
-                    ).animate(target: c.imageVisible ? 1 : 0).fadeIn(duration: 700.ms, curve: Curves.easeOut),
+                    )
+                        .animate(target: c.imageVisible ? 1 : 0)
+                        .fadeIn(duration: 700.ms, curve: Curves.easeOut),
                     SizedBox(height: 20),
                     SizedBox(
                       width: 640,
@@ -69,8 +70,11 @@ class AboutUsSnapshot extends StatelessWidget {
                         size: 20.0,
                         color: AppColors.textColor,
                         maxLines: 10,
+                        textAlign: TextAlign.center,
                       ),
-                    ).animate(target: c.imageVisible ? 1 : 0).fadeIn(duration: 700.ms, curve: Curves.easeOut),
+                    )
+                        .animate(target: c.imageVisible ? 1 : 0)
+                        .fadeIn(duration: 700.ms, curve: Curves.easeOut),
                     SizedBox(height: 10),
                     // read more button
                     MouseRegion(
@@ -85,14 +89,17 @@ class AboutUsSnapshot extends StatelessWidget {
                       cursor: SystemMouseCursors.click,
                       child: GestureDetector(
                         onTap: () {
-                          Get.toNamed('/about'); // Ensure the correct route name
+                          Get.toNamed(
+                              '/about'); // Ensure the correct route name
                         },
                         child: AnimatedContainer(
                           duration: 600.ms,
                           height: 80,
                           width: 200,
                           decoration: BoxDecoration(
-                            color: c.isReadMoreButtonHovered ? AppColors.primaryColor : AppColors.transparent,
+                            color: c.isReadMoreButtonHovered
+                                ? AppColors.primaryColor
+                                : AppColors.transparent,
                             border: Border.all(
                               color: AppColors.primaryColor,
                             ),
@@ -123,7 +130,9 @@ class AboutUsSnapshot extends StatelessWidget {
                             ],
                           ),
                         ),
-                      ).animate(target: c.imageVisible ? 1 : 0).fadeIn(duration: 2000.ms, curve: Curves.easeOut),
+                      )
+                          .animate(target: c.imageVisible ? 1 : 0)
+                          .fadeIn(duration: 2000.ms, curve: Curves.easeOut),
                     ),
                   ],
                 ),
@@ -136,7 +145,6 @@ class AboutUsSnapshot extends StatelessWidget {
             builder: (c) {
               var hght = MediaQuery.of(context).size.height;
               return Container(
-                height: hght * 0.9,
                 padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 20.0),
                 color: Colors.white,
                 child: Row(
@@ -155,7 +163,9 @@ class AboutUsSnapshot extends StatelessWidget {
                             fontFamily: AppFonts.hunters,
                             fontWeight: FontWeight.normal,
                             color: AppColors.secondaryColor,
-                          ).animate(target: c.imageVisible ? 1 : 0).fadeIn(duration: 700.ms, curve: Curves.easeOut),
+                          )
+                              .animate(target: c.imageVisible ? 1 : 0)
+                              .fadeIn(duration: 700.ms, curve: Curves.easeOut),
                           SizedBox(height: 20),
                           SizedBox(
                             width: 640,
@@ -165,7 +175,9 @@ class AboutUsSnapshot extends StatelessWidget {
                               color: AppColors.textColor,
                               maxLines: 10,
                             ),
-                          ).animate(target: c.imageVisible ? 1 : 0).fadeIn(duration: 700.ms, curve: Curves.easeOut),
+                          )
+                              .animate(target: c.imageVisible ? 1 : 0)
+                              .fadeIn(duration: 700.ms, curve: Curves.easeOut),
                           SizedBox(height: 10),
                           MouseRegion(
                             onEnter: (event) {
@@ -179,14 +191,17 @@ class AboutUsSnapshot extends StatelessWidget {
                             cursor: SystemMouseCursors.click,
                             child: GestureDetector(
                               onTap: () {
-                                Get.toNamed('/about'); // Ensure the correct route name
+                                Get.toNamed(
+                                    '/about'); // Ensure the correct route name
                               },
                               child: AnimatedContainer(
                                 duration: 600.ms,
                                 height: 80,
                                 width: 200,
                                 decoration: BoxDecoration(
-                                  color: c.isReadMoreButtonHovered ? AppColors.primaryColor : AppColors.transparent,
+                                  color: c.isReadMoreButtonHovered
+                                      ? AppColors.primaryColor
+                                      : AppColors.transparent,
                                   border: Border.all(
                                     color: AppColors.primaryColor,
                                   ),
@@ -196,7 +211,8 @@ class AboutUsSnapshot extends StatelessWidget {
                                   children: [
                                     AnimatedContainer(
                                       duration: 500.ms,
-                                      height: c.isReadMoreButtonHovered ? 80 : 0,
+                                      height:
+                                          c.isReadMoreButtonHovered ? 80 : 0,
                                       width: 200,
                                       decoration: BoxDecoration(
                                         color: AppColors.primaryColor,
@@ -217,7 +233,8 @@ class AboutUsSnapshot extends StatelessWidget {
                                   ],
                                 ),
                               ),
-                            ).animate(target: c.imageVisible ? 1 : 0).fadeIn(duration: 2000.ms, curve: Curves.easeOut),
+                            ).animate(target: c.imageVisible ? 1 : 0).fadeIn(
+                                duration: 2000.ms, curve: Curves.easeOut),
                           ),
                         ],
                       ),

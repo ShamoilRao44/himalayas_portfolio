@@ -30,7 +30,7 @@ class NavigationHeader extends StatelessWidget {
           return Container(
             color: AppColors.primaryColor, // Background color of the navbar
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 // Company Logo
                 Container(
@@ -43,6 +43,22 @@ class NavigationHeader extends StatelessWidget {
                     ),
                   ),
                 ),
+                //DRAWER LOGO
+                Container(
+                  height: 64,
+                  width: 64,
+                  alignment: Alignment.center,
+                  child: IconButton(
+                    icon: Icon(
+                      Icons.menu,
+                      size: 32,
+                      color: AppColors.secondaryColor,
+                    ),
+                    onPressed: () {
+                      Scaffold.of(context).openEndDrawer();
+                    },
+                  ),
+                )
               ],
             ),
           );

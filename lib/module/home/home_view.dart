@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_portfolio/resources/app_images.dart';
 import 'package:food_portfolio/resources/app_routes.dart';
+import 'package:food_portfolio/utils/widgets/app_drawer.dart';
 import 'package:get/get.dart';
 
 import 'package:food_portfolio/utils/widgets/footer.dart';
@@ -22,6 +23,7 @@ class HomeView extends StatelessWidget {
         var hght = MediaQuery.of(context).size.height;
         var wdth = MediaQuery.of(context).size.width;
         return Scaffold(
+          endDrawer: AppDrawer(),
           body: Stack(
             children: [
               Container(
@@ -30,7 +32,7 @@ class HomeView extends StatelessWidget {
                 decoration: BoxDecoration(
                   image: DecorationImage(
                     image: AssetImage(Appimages.pageBG),
-                    fit: BoxFit.fill,
+                    fit: BoxFit.cover,
                   ),
                 ),
               ),

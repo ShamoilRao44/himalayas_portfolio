@@ -35,7 +35,7 @@ class Footer extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 40),
+              SizedBox(height: 32),
               // Quick Links
               Column(
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -46,16 +46,18 @@ class Footer extends StatelessWidget {
                       children: [
                         AppText(
                           text: 'Quick Links',
-                          size: 30.0,
+                          size: 24.0,
                           fontWeight: FontWeight.bold,
                           color: Colors.white,
+                          textDecoration: TextDecoration.underline,
+                          decorationColor: AppColors.white,
                         ),
-                        SizedBox(height: 10),
+                        SizedBox(height: 8),
                         GestureDetector(
                           onTap: () => Get.toNamed('/home'),
                           child: AppText(
                             text: 'Home',
-                            size: 18.0,
+                            size: 16.0,
                             color: Colors.white,
                           ),
                         ),
@@ -63,7 +65,7 @@ class Footer extends StatelessWidget {
                           onTap: () => Get.toNamed('/about'),
                           child: AppText(
                             text: 'About Us',
-                            size: 18.0,
+                            size: 16.0,
                             color: Colors.white,
                           ),
                         ),
@@ -71,47 +73,52 @@ class Footer extends StatelessWidget {
                           onTap: () => Get.toNamed('/contact'),
                           child: AppText(
                             text: 'Contact',
-                            size: 18.0,
+                            size: 16.0,
                             color: Colors.white,
                           ),
                         ),
                       ],
                     ),
                   ),
-                  SizedBox(height: 32),
+                  SizedBox(height: 24),
                   // Contact Information
                   Column(
                     children: [
                       AppText(
                         text: 'Contact Information',
-                        size: 30.0,
+                        size: 24.0,
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
+                        textDecoration: TextDecoration.underline,
+                        decorationColor: AppColors.white,
                       ),
-                      SizedBox(height: 16),
+                      SizedBox(height: 8),
                       AppText(
                         text: AppStrings.address1,
-                        size: 18.0,
+                        size: 16.0,
                         color: Colors.white,
+                        maxLines: 2,
                       ),
                       AppText(
                         text: AppStrings.address2,
-                        size: 18.0,
+                        size: 16.0,
+                        color: Colors.white,
+                        maxLines: 2,
+                      ),
+                      AppText(
+                        text:
+                            '+91 9589553039\n+91 8602299932\n+91 9009800600\n+91 9926122722',
+                        size: 16.0,
                         color: Colors.white,
                       ),
                       AppText(
-                        text: 'Phone: +123 456 7890',
-                        size: 18.0,
-                        color: Colors.white,
-                      ),
-                      AppText(
-                        text: 'Email: info@company.com',
+                        text: AppStrings.email,
                         size: 18.0,
                         color: Colors.white,
                       ),
                     ],
                   ),
-                  SizedBox(height: 32),
+                  SizedBox(height: 24),
                   // Social Media Links
                   Column(
                     children: [
@@ -120,8 +127,10 @@ class Footer extends StatelessWidget {
                         size: 24.0,
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
+                        textDecoration: TextDecoration.underline,
+                        decorationColor: AppColors.white,
                       ),
-                      SizedBox(height: 10),
+                      SizedBox(height: 4),
                       IconButton(
                         icon: Icon(Icons.facebook),
                         iconSize: 24,
@@ -147,11 +156,15 @@ class Footer extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               // Company Logo
-              AppText(
-                text: 'Company Logo',
-                size: 24.0,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
+              Container(
+                height: 80,
+                width: 200,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage(Appimages.companyLogo),
+                    fit: BoxFit.fill,
+                  ),
+                ),
               ),
               SizedBox(height: 20),
               // Quick Links
@@ -159,6 +172,7 @@ class Footer extends StatelessWidget {
                 width: 800,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     MouseRegion(
                       cursor: SystemMouseCursors.click,
@@ -209,24 +223,36 @@ class Footer extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                           color: Colors.white,
                         ),
-                        SizedBox(height: 10),
+                        SizedBox(height: 16),
+                        SizedBox(
+                          width: 240,
+                          child: AppText(
+                            text: 'City Office: ${AppStrings.address1}',
+                            size: 18.0,
+                            color: Colors.white,
+                            maxLines: 3,
+                          ),
+                        ),
+                        SizedBox(height: 8),
+                        SizedBox(
+                          width: 240,
+                          child: AppText(
+                            text: 'Reg. Office: ${AppStrings.address2}',
+                            size: 18.0,
+                            color: Colors.white,
+                            maxLines: 3,
+                          ),
+                        ),
+                        SizedBox(height: 8),
                         AppText(
-                          text: AppStrings.address1,
+                          text:
+                              'Phone: +91 9589553039\n+91 8602299932\n+91 9009800600\n+91 9926122722',
                           size: 18.0,
                           color: Colors.white,
                         ),
+                        SizedBox(height: 8),
                         AppText(
-                          text: AppStrings.address2,
-                          size: 18.0,
-                          color: Colors.white,
-                        ),
-                        AppText(
-                          text: 'Phone: +123 456 7890',
-                          size: 18.0,
-                          color: Colors.white,
-                        ),
-                        AppText(
-                          text: 'Email: info@company.com',
+                          text: 'Email: ${AppStrings.email}',
                           size: 18.0,
                           color: Colors.white,
                         ),
@@ -249,7 +275,8 @@ class Footer extends StatelessWidget {
                               icon: Icon(Icons.facebook),
                               iconSize: 24,
                               color: Colors.white,
-                              onPressed: () => _launchURL('https://www.facebook.com'),
+                              onPressed: () =>
+                                  _launchURL('https://www.facebook.com'),
                             ),
                           ],
                         ),

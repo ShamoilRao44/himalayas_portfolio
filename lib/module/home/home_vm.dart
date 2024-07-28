@@ -21,10 +21,10 @@ class HomeVM extends GetxController {
   bool isCntctAnmTrig = false;
 
   List<Product> productsList = [
-    Product(imageUrl: Appimages.product1, description: AppStrings.loremIpsum),
-    Product(imageUrl: Appimages.product2, description: AppStrings.loremIpsum),
-    Product(imageUrl: Appimages.product3, description: AppStrings.loremIpsum),
-    Product(imageUrl: Appimages.product4, description: AppStrings.loremIpsum),
+    Product(imageUrl: Appimages.product1, description: AppStrings.product1dscr),
+    Product(imageUrl: Appimages.product2, description: AppStrings.product2dscr),
+    Product(imageUrl: Appimages.product3, description: AppStrings.product3dscr),
+    Product(imageUrl: Appimages.product4, description: AppStrings.product4dscr),
   ];
   List<bool> isProductVisibleList = [false, false, false, false];
 
