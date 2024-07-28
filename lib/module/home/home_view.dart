@@ -1,8 +1,14 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
-import 'package:food_portfolio/module/home/widgets/footer.dart';
+import 'package:food_portfolio/resources/app_images.dart';
+import 'package:food_portfolio/resources/app_routes.dart';
+import 'package:food_portfolio/utils/widgets/app_drawer.dart';
 import 'package:get/get.dart';
+
+import 'package:food_portfolio/utils/widgets/footer.dart';
+import '../../utils/widgets/navigation_header.dart';
 import 'home_vm.dart';
-import 'widgets/navigation_header.dart';
 import 'widgets/hero_section.dart';
 import 'widgets/featured_products.dart';
 import 'widgets/about_us_snapshot.dart';
@@ -17,6 +23,7 @@ class HomeView extends StatelessWidget {
         var hght = MediaQuery.of(context).size.height;
         var wdth = MediaQuery.of(context).size.width;
         return Scaffold(
+          endDrawer: AppDrawer(),
           body: Stack(
             children: [
               Container(
@@ -24,33 +31,36 @@ class HomeView extends StatelessWidget {
                 width: wdth,
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage('assets/images/hero-section-bg.png'),
-                    fit: BoxFit.fill,
+                    image: AssetImage(Appimages.pageBG),
+                    fit: BoxFit.cover,
                   ),
                 ),
               ),
               SingleChildScrollView(
                 controller: c.scrollController,
-                child: Column(
-                  children: [
-                    Container(
-                      key: c.homeKey,
-                      child: HeroSection(),
-                    ),
-                    Container(
-                      key: c.aboutUsKey,
-                      child: AboutUsSnapshot(),
-                    ),
-                    Container(
-                      key: c.productsKey,
-                      child: FeaturedProducts(),
-                    ),
-                    Container(
-                      key: c.contactKey,
-                      child: ContactInfo(),
-                    ),
-                    Footer(),
-                  ],
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 32.0),
+                  child: Column(
+                    children: [
+                      Container(
+                        key: c.homeKey,
+                        child: HeroSection(),
+                      ),
+                      Container(
+                        key: c.aboutUsKey,
+                        child: AboutUsSnapshot(),
+                      ),
+                      Container(
+                        key: c.productsKey,
+                        child: FeaturedProducts(),
+                      ),
+                      Container(
+                        key: c.contactKey,
+                        child: ContactInfo(),
+                      ),
+                      Footer(),
+                    ],
+                  ),
                 ),
               ),
               // Positioned Navigation Header to stay on top
@@ -63,6 +73,7 @@ class HomeView extends StatelessWidget {
                   onProductsPressed: () => c.scrollToSection(c.productsKey),
                   onAboutUsPressed: () => c.scrollToSection(c.aboutUsKey),
                   onContactPressed: () => c.scrollToSection(c.contactKey),
+                  onBlogPressed: () => Get.toNamed(AppRoutes.blog),
                 ),
               ),
             ],

@@ -1,3 +1,4 @@
+import 'package:food_portfolio/module/blog/blog_vm.dart';
 import 'package:get/get.dart';
 import '../module/home/home_vm.dart';
 import '../module/about_us/about_us_vm.dart';
@@ -29,5 +30,12 @@ class ContactUsBinding extends Bindings {
   @override
   void dependencies() {
     Get.lazyPut<ContactUsVM>(() => ContactUsVM());
+  }
+}
+
+class BlogBinding extends Bindings {
+  @override
+  void dependencies() {
+    Get.put(BlogVM());
   }
 }
