@@ -9,13 +9,13 @@ class AppStrings {
   static const email = "naturalhimalaya.frozen@gmail.com";
 
   static const product1dscr =
-      'From farm to freezer, our frozen Hara Chana delivers garden-fresh goodness straight to your plate!';
-  static const product2dscr =
       'Picked with care, our green peas bring the taste of the farm to your family meals, every time';
-  static const product3dscr =
+  static const product2dscr =
       'Experience the natural sweetness of freshly harvested sweet corn,perfect for adding a touch of farm-fresh flavor to your recipes';
-  static const product4dscr =
+  static const product3dscr =
       'Discover the vibrant flavors of our mix veg blend, a garden-fresh medley perfect for quick and nutritious meals';
+  static const product4dscr =
+      'From farm to freezer, our frozen Hara Chana delivers garden-fresh goodness straight to your plate!';
 
   static const aboutUsIntro =
       'We offer complete package with a variety of fruits and vegetables that enhance every meal making it healthy and tasty';
