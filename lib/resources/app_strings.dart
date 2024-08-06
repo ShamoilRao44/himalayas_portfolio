@@ -21,7 +21,7 @@ class AppStrings {
       'We offer complete package with a variety of fruits and vegetables that enhance every meal making it healthy and tasty';
 
   static const aboutUsContent = """
- Welcome to Natural Himalaya Frozen Food Products Pvt. Ltd., where we seamlessly blend nature's finest with innovative preservation techniques. Our commitment to excellence ensures you enjoy fresh, nutritious, and flavorful frozen foods every day. Experience the perfect harmony of quality and convenience with our premium offerings.
+ Welcome to Natural Himalaya Frozen Food Products Pvt. Ltd., where we seamlessly blend nature's finest with innovative processing techniques without adding preservatives. Our commitment to excellence ensures you enjoy fresh, nutritious, and flavorful frozen foods every day. Experience the perfect harmony of quality and convenience with our premium offerings.
   """;
 
   static const missionText =
