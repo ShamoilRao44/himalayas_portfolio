@@ -105,8 +105,8 @@ class AboutUsView extends StatelessWidget {
                         },
                         child: _buildCard(
                           imagePath: Appimages.card1,
-                          title: 'Our Mission',
-                          text: AppStrings.missionText,
+                          title: 'Our Vision',
+                          text: AppStrings.visionText,
                           imageLeft: true,
                           target: vm.isFirstCardVisible,
                           color: AppColors.softYellow,
@@ -124,8 +124,8 @@ class AboutUsView extends StatelessWidget {
                         },
                         child: _buildCard(
                           imagePath: Appimages.card2,
-                          title: 'Our Vision',
-                          text: AppStrings.visionText,
+                          title: 'Our Mission',
+                          text: AppStrings.missionText,
                           imageLeft: false,
                           target: vm.isSecondCardVisible,
                           color: AppColors.mintGreen,
@@ -134,7 +134,7 @@ class AboutUsView extends StatelessWidget {
                         ),
                       ),
                       SizedBox(height: 48),
-                      // Footer
+                      // FOOTER
                       Footer(),
                     ],
                   ),
@@ -157,7 +157,7 @@ class AboutUsView extends StatelessWidget {
                         onHomePressed: () => Get.toNamed(AppRoutes.home),
                         onProductsPressed: () => Get.toNamed(AppRoutes.home),
                         onAboutUsPressed: () => Get.toNamed('/about'),
-                        onContactPressed: () => Get.toNamed('/contact'),
+                        onContactPressed: () => Get.toNamed(AppRoutes.contact),
                         onBlogPressed: () => Get.toNamed(AppRoutes.blog),
                       ),
                       // Background Image with About Us Text
@@ -226,8 +226,8 @@ class AboutUsView extends StatelessWidget {
                           child: _buildCard(
                               imagePath: Appimages
                                   .card1, // Replace with your image asset
-                              title: 'Our Mission',
-                              text: AppStrings.missionText,
+                              title: 'Our Vision',
+                              text: AppStrings.visionText,
                               imageLeft: true,
                               target: vm.isFirstCardVisible,
                               color: AppColors.softYellow),
@@ -246,8 +246,8 @@ class AboutUsView extends StatelessWidget {
                           child: _buildCard(
                             imagePath: Appimages
                                 .card2, // Replace with your image asset
-                            title: 'Our Vision',
-                            text: AppStrings.visionText,
+                            title: 'Our Mission',
+                            text: AppStrings.missionText,
                             imageLeft: false,
                             target: vm.isSecondCardVisible,
                             color: AppColors.mintGreen,
