@@ -12,12 +12,12 @@ import 'package:responsive_builder/responsive_builder.dart'; // Update the path 
 class QuickContactSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var wdth = MediaQuery.of(context).size.width;
     return ResponsiveBuilder(builder: (context, sizingInformation) {
       var isMobile =
           sizingInformation.deviceScreenType == DeviceScreenType.mobile
               ? true
               : false;
-      var wdth = MediaQuery.of(context).size.width;
       return GetBuilder<ContactUsVM>(builder: (c) {
         return Padding(
           padding: EdgeInsets.symmetric(vertical: 48.0),
@@ -63,6 +63,8 @@ class QuickContactSection extends StatelessWidget {
                           controller: c.subjectController),
                       SizedBox(height: 16),
                       CustomDropdownTextField(
+                        controller: c.interestedProdCtrl,
+                        readOnly: c.isReadOnlyDropdown,
                         selectedProducts: c.productsInterested,
                         productList: c.productList,
                         onSelected: (newValue) {
@@ -172,20 +174,22 @@ class CustomDropdownTextField extends StatelessWidget {
   final List<String> selectedProducts;
   final List<String> productList;
   final ValueChanged<String> onSelected;
+  final TextEditingController controller;
+  final bool readOnly;
 
   const CustomDropdownTextField({
     required this.selectedProducts,
     required this.productList,
     required this.onSelected,
+    required this.controller,
+    required this.readOnly,
   });
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      controller: TextEditingController(
-        text: selectedProducts.join(', '),
-      ),
-      readOnly: true,
+      controller: controller,
+      readOnly: readOnly,
       decoration: InputDecoration(
         hintText: 'Select the products you are interested in',
         hintStyle: TextStyle(fontSize: 12),

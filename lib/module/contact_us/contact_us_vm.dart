@@ -9,6 +9,7 @@ import 'package:flutter/material.dart';
 
 class ContactUsVM extends GetxController {
   ContactUsRepoImpl curi = ContactUsRepoImpl();
+  bool isReadOnlyDropdown = true;
 
   final formKey = GlobalKey<FormState>();
   final TextEditingController nameController = TextEditingController();
@@ -16,17 +17,43 @@ class ContactUsVM extends GetxController {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController subjectController = TextEditingController();
   final TextEditingController messageController = TextEditingController();
+  final TextEditingController interestedProdCtrl = TextEditingController();
 
   var selectedProduct = ''.obs;
-  List<String> productList = ['Mix Veg', 'Green Peas', 'Sweet Corn', 'Hara Chana'];
+  List<String> productList = [
+    'Mix Veg',
+    'Green Peas',
+    'Sweet Corn',
+    'Hara Chana',
+    'Others'
+  ];
   List<String> productsInterested = [];
 
   void toggleProductInterested(String product) {
+    if (product == 'Others') {
+      productsInterested.clear();
+      interestedProdCtrl.clear();
+      productsInterested.add('Others');
+      isReadOnlyDropdown = false;
+      update();
+      return;
+    }
+
+    if (product != 'Others' && productsInterested.contains('Others')) {
+      productsInterested.remove('Others');
+      isReadOnlyDropdown = true;
+      interestedProdCtrl.clear();
+    }
+
     if (productsInterested.contains(product)) {
       productsInterested.remove(product);
     } else {
       productsInterested.add(product);
     }
+
+    productsInterested.contains('Others')
+        ? null
+        : interestedProdCtrl.text = productsInterested.join(',');
     update(); // Notify the UI to update
   }
 
@@ -42,7 +69,9 @@ class ContactUsVM extends GetxController {
     data['email'] = emailController.text;
     data['subject'] = subjectController.text;
     data['message'] = messageController.text;
-    data['product_interested'] = productsInterested;
+    data['product_interested'] = productsInterested.contains('Others')
+        ? interestedProdCtrl.text
+        : productsInterested.join(',');
 
     debugPrint(data.toString());
 
