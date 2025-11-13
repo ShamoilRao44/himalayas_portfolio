@@ -39,8 +39,7 @@ class HeroSection extends StatelessWidget {
                   width: wdth,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage(Appimages
-                          .heroSectionBG), // Replace with your image asset
+                      image: AssetImage(Appimages.heroSectionBG), // Replace with your image asset
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -53,9 +52,9 @@ class HeroSection extends StatelessWidget {
                         decoration: BoxDecoration(
                           gradient: LinearGradient(
                             colors: [
-                              AppColors.black.withOpacity(0.3),
-                              AppColors.black.withOpacity(0.6),
-                              AppColors.black.withOpacity(0.7),
+                              AppColors.black.withValues(alpha: 0.3),
+                              AppColors.black.withValues(alpha: 0.6),
+                              AppColors.black.withValues(alpha: 0.7),
                             ],
                           ),
                         ),
@@ -92,10 +91,7 @@ class HeroSection extends StatelessWidget {
                                   color: AppColors.primaryColor,
                                   fontFamily: AppFonts.montserratRegular,
                                 ),
-                              ).animate().slide(
-                                  begin: Offset(2, 0),
-                                  duration: 1000.ms,
-                                  curve: Curves.easeOut),
+                              ).animate().slide(begin: Offset(2, 0), duration: 1000.ms, curve: Curves.easeOut),
                             ],
                           ),
                         ),
@@ -111,83 +107,73 @@ class HeroSection extends StatelessWidget {
         else {
           return GetBuilder<HomeVM>(
             builder: (c) {
-              var hght = MediaQuery.of(context).size.height;
               var wdth = MediaQuery.of(context).size.width;
-              return Container(
-                child: VisibilityDetector(
-                  key: Key('our_products_visibility_detector'),
-                  onVisibilityChanged: (visibilityInfo) {
-                    if (visibilityInfo.visibleFraction > 0.2) {
-                      c.isHeroSection = true;
-                      c.update();
-                    } else {
-                      c.isHeroSection = false;
-                      c.update();
-                    }
-                  },
-                  child: Container(
-                    height: wdth > 1000 ? 640 : 320,
-                    width: wdth,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage(Appimages
-                            .heroSectionBG), // Replace with your image asset
-                        fit: BoxFit.fill,
-                      ),
+              return VisibilityDetector(
+                key: Key('our_products_visibility_detector'),
+                onVisibilityChanged: (visibilityInfo) {
+                  if (visibilityInfo.visibleFraction > 0.2) {
+                    c.isHeroSection = true;
+                    c.update();
+                  } else {
+                    c.isHeroSection = false;
+                    c.update();
+                  }
+                },
+                child: Container(
+                  height: wdth > 1000 ? 640 : 320,
+                  width: wdth,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage(Appimages.heroSectionBG), // Replace with your image asset
+                      fit: BoxFit.fill,
                     ),
-                    child: Stack(
-                      alignment: Alignment.center,
-                      children: [
-                        Container(
-                          height: wdth > 1000 ? 640 : 320,
-                          width: wdth,
-                          decoration: BoxDecoration(
-                            gradient: LinearGradient(
-                              colors: [
-                                AppColors.black.withOpacity(0.3),
-                                AppColors.black.withOpacity(0.6),
-                                AppColors.black.withOpacity(0.7),
-                              ],
-                            ),
-                          ),
-                        ),
-                        // Company Name and Slogan
-                        Container(
-                          width: 1420,
-                          alignment: Alignment.centerRight,
-                          padding: EdgeInsets.only(right: 80),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Text(
-                                AppStrings.companyName,
-                                style: TextStyle(
-                                  fontSize: 120,
-                                  fontFamily: AppFonts.hunters,
-                                  color: AppColors.primaryColor,
-                                  fontWeight: FontWeight.normal,
-                                ),
-                              ).animate().slide(
-                                  begin: Offset(2, 0),
-                                  duration: 1000.ms,
-                                  curve: Curves.easeOut),
-                              SizedBox(height: 24),
-                              Text(
-                                AppStrings.slogan,
-                                style: TextStyle(
-                                  fontSize: 32.0,
-                                  color: AppColors.primaryColor,
-                                  fontFamily: AppFonts.montserratRegular,
-                                ),
-                              ).animate().slide(
-                                  begin: Offset(2, 0),
-                                  duration: 1000.ms,
-                                  curve: Curves.easeOut),
+                  ),
+                  child: Stack(
+                    alignment: Alignment.center,
+                    children: [
+                      Container(
+                        height: wdth > 1000 ? 640 : 320,
+                        width: wdth,
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                            colors: [
+                              AppColors.black.withValues(alpha: 0.3),
+                              AppColors.black.withValues(alpha: 0.6),
+                              AppColors.black.withValues(alpha: 0.7),
                             ],
                           ),
                         ),
-                      ],
-                    ),
+                      ),
+                      // Company Name and Slogan
+                      Container(
+                        width: 1420,
+                        alignment: Alignment.centerRight,
+                        padding: EdgeInsets.only(right: 80),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Text(
+                              AppStrings.companyName,
+                              style: TextStyle(
+                                fontSize: 120,
+                                fontFamily: AppFonts.hunters,
+                                color: AppColors.primaryColor,
+                                fontWeight: FontWeight.normal,
+                              ),
+                            ).animate().slide(begin: Offset(2, 0), duration: 1000.ms, curve: Curves.easeOut),
+                            SizedBox(height: 24),
+                            Text(
+                              AppStrings.slogan,
+                              style: TextStyle(
+                                fontSize: 32.0,
+                                color: AppColors.primaryColor,
+                                fontFamily: AppFonts.montserratRegular,
+                              ),
+                            ).animate().slide(begin: Offset(2, 0), duration: 1000.ms, curve: Curves.easeOut),
+                          ],
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               );

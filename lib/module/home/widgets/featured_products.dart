@@ -22,7 +22,7 @@ class FeaturedProducts extends StatelessWidget {
           builder: (c) {
             return Container(
               width: double.infinity,
-              color: AppColors.black.withOpacity(0.8),
+              color: AppColors.black.withValues(alpha: 0.8),
               child: Column(
                 children: [
                   SizedBox(height: 16),
@@ -40,15 +40,12 @@ class FeaturedProducts extends StatelessWidget {
                       fontFamily: AppFonts.gaby,
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
-                    )
-                        .animate(target: c.isOurProductTextVisible ? 1 : 0)
-                        .fadeIn(duration: 800.ms, curve: Curves.easeIn),
+                    ).animate(target: c.isOurProductTextVisible ? 1 : 0).fadeIn(duration: 800.ms, curve: Curves.easeIn),
                   ),
                   SizedBox(height: 24),
                   for (int i = 0; i < c.productsList.length; i++)
                     Padding(
-                      padding:
-                          EdgeInsets.symmetric(vertical: 16.0, horizontal: 16),
+                      padding: EdgeInsets.symmetric(vertical: 16.0, horizontal: 16),
                       child: VisibilityDetector(
                         key: Key('product_$i'),
                         onVisibilityChanged: (info) {
@@ -68,10 +65,7 @@ class FeaturedProducts extends StatelessWidget {
                                 c.productsList[i].imageUrl,
                                 width: 320,
                                 height: 320,
-                              )
-                                  .animate(
-                                      target: c.isProductVisibleList[i] ? 1 : 0)
-                                  .slide(
+                              ).animate(target: c.isProductVisibleList[i] ? 1 : 0).slide(
                                     begin: Offset(-2, 0),
                                     end: Offset(0, 0),
                                     duration: 1000.ms,
@@ -83,36 +77,22 @@ class FeaturedProducts extends StatelessWidget {
                                   size: 24.0,
                                   color: AppColors.white,
                                   maxLines: 5,
-                                )
-                                    .animate(
-                                        target:
-                                            c.isProductVisibleList[i] ? 1 : 0)
-                                    .fadeIn(duration: 1000.ms),
+                                ).animate(target: c.isProductVisibleList[i] ? 1 : 0).fadeIn(duration: 1000.ms),
                               ),
                             ] else ...[
                               Image.asset(
                                 c.productsList[i].imageUrl,
                                 width: 320,
                                 height: 320,
-                              )
-                                  .animate(
-                                      target: c.isProductVisibleList[i] ? 1 : 0)
-                                  .slide(
-                                      begin: Offset(2, 0),
-                                      end: Offset(0, 0),
-                                      duration: 1000.ms,
-                                      curve: Curves.easeInOut),
+                              ).animate(target: c.isProductVisibleList[i] ? 1 : 0).slide(
+                                  begin: Offset(2, 0), end: Offset(0, 0), duration: 1000.ms, curve: Curves.easeInOut),
                               SizedBox(
                                 child: AppText(
                                   text: c.productsList[i].description,
                                   size: 24.0,
                                   color: AppColors.white,
                                   maxLines: 5,
-                                )
-                                    .animate(
-                                        target:
-                                            c.isProductVisibleList[i] ? 1 : 0)
-                                    .fadeIn(duration: 1000.ms),
+                                ).animate(target: c.isProductVisibleList[i] ? 1 : 0).fadeIn(duration: 1000.ms),
                               ),
                             ],
                           ],
@@ -133,7 +113,7 @@ class FeaturedProducts extends StatelessWidget {
             var wdth = MediaQuery.of(context).size.width;
             return Container(
               width: wdth,
-              color: AppColors.black.withOpacity(0.8),
+              color: AppColors.black.withValues(alpha: 0.8),
               child: Container(
                 alignment: Alignment.center,
                 width: wdth > 1420 ? 1420 : wdth,
@@ -161,8 +141,7 @@ class FeaturedProducts extends StatelessWidget {
                     SizedBox(height: 40),
                     for (int i = 0; i < c.productsList.length; i++)
                       Padding(
-                        padding: EdgeInsets.symmetric(
-                            vertical: 16.0, horizontal: 16),
+                        padding: EdgeInsets.symmetric(vertical: 16.0, horizontal: 16),
                         child: VisibilityDetector(
                           key: Key('product_$i'),
                           onVisibilityChanged: (info) {
@@ -175,20 +154,14 @@ class FeaturedProducts extends StatelessWidget {
                             }
                           },
                           child: Row(
-                            mainAxisAlignment: i % 2 == 0
-                                ? MainAxisAlignment.start
-                                : MainAxisAlignment.end,
+                            mainAxisAlignment: i % 2 == 0 ? MainAxisAlignment.start : MainAxisAlignment.end,
                             children: [
                               if (i % 2 == 0) ...[
                                 Image.asset(
                                   c.productsList[i].imageUrl,
                                   width: 320,
                                   height: 320,
-                                )
-                                    .animate(
-                                        target:
-                                            c.isProductVisibleList[i] ? 1 : 0)
-                                    .slide(
+                                ).animate(target: c.isProductVisibleList[i] ? 1 : 0).slide(
                                       begin: Offset(-2, 0),
                                       end: Offset(0, 0),
                                       duration: 1000.ms,
@@ -202,11 +175,7 @@ class FeaturedProducts extends StatelessWidget {
                                     size: 32.0,
                                     color: AppColors.white,
                                     maxLines: 5,
-                                  )
-                                      .animate(
-                                          target:
-                                              c.isProductVisibleList[i] ? 1 : 0)
-                                      .fadeIn(duration: 1000.ms),
+                                  ).animate(target: c.isProductVisibleList[i] ? 1 : 0).fadeIn(duration: 1000.ms),
                                 ),
                               ] else ...[
                                 SizedBox(
@@ -216,26 +185,15 @@ class FeaturedProducts extends StatelessWidget {
                                     size: 32.0,
                                     color: AppColors.white,
                                     maxLines: 5,
-                                  )
-                                      .animate(
-                                          target:
-                                              c.isProductVisibleList[i] ? 1 : 0)
-                                      .fadeIn(duration: 1000.ms),
+                                  ).animate(target: c.isProductVisibleList[i] ? 1 : 0).fadeIn(duration: 1000.ms),
                                 ),
                                 SizedBox(width: 80),
                                 Image.asset(
                                   c.productsList[i].imageUrl,
                                   width: 320,
                                   height: 320,
-                                )
-                                    .animate(
-                                        target:
-                                            c.isProductVisibleList[i] ? 1 : 0)
-                                    .slide(
-                                        begin: Offset(2, 0),
-                                        end: Offset(0, 0),
-                                        duration: 1000.ms,
-                                        curve: Curves.easeInOut),
+                                ).animate(target: c.isProductVisibleList[i] ? 1 : 0).slide(
+                                    begin: Offset(2, 0), end: Offset(0, 0), duration: 1000.ms, curve: Curves.easeInOut),
                               ],
                             ],
                           ),

@@ -1,11 +1,8 @@
-// ignore_for_file: prefer_const_constructors
-
-import 'dart:developer';
+// ignore_for_file: prefer_const_constructors, use_build_context_synchronously
 
 import 'package:food_portfolio/module/contact_us/repo/contact_us_repo_impl.dart';
 import 'package:food_portfolio/resources/app_colors.dart';
 import 'package:food_portfolio/utils/widgets/app_snackbar.dart';
-import 'package:food_portfolio/utils/widgets/app_text.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 // import 'package:cloud_firestore/cloud_firestore.dart';
@@ -34,7 +31,6 @@ class ContactUsVM extends GetxController {
   }
 
   bool isloading = false;
-
 
   Future<void> submitQuickContact(BuildContext context) async {
     isloading = true;

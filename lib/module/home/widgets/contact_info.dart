@@ -15,7 +15,6 @@ import 'package:food_portfolio/resources/app_colors.dart'; // Update the path as
 class ContactInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var hght = MediaQuery.of(context).size.height;
     return ResponsiveBuilder(
       builder: (context, sizingInformation) {
         //MOBILE VIEW
@@ -33,8 +32,7 @@ class ContactInfo extends StatelessWidget {
                   }
                 },
                 child: Container(
-                  padding:
-                      EdgeInsets.symmetric(vertical: 40.0, horizontal: 20.0),
+                  padding: EdgeInsets.symmetric(vertical: 40.0, horizontal: 20.0),
                   color: Colors.white,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -48,9 +46,7 @@ class ContactInfo extends StatelessWidget {
                           fontFamily: AppFonts.hunters,
                           fontWeight: FontWeight.normal,
                           color: AppColors.secondaryColor,
-                        )
-                            .animate(target: c.isCntctAnmTrig ? 1 : 0)
-                            .fadeIn(duration: 600.ms, curve: Curves.easeIn),
+                        ).animate(target: c.isCntctAnmTrig ? 1 : 0).fadeIn(duration: 600.ms, curve: Curves.easeIn),
                       ),
                       SizedBox(height: 40),
                       // Contact Information
@@ -66,11 +62,9 @@ class ContactInfo extends StatelessWidget {
                             maxLines: 1,
                           ),
                           SizedBox(height: 24),
-                          _buildContactInfo(Icons.phone,
-                              '+91 9589553039\n+91 8602299932\n+91 9009800600\n+91 9926122722',
-                              animation: 'fadeIn',
-                              target: c.isCntctAnmTrig,
-                              textSize: 12),
+                          _buildContactInfo(
+                              Icons.phone, '+91 9589553039\n+91 8602299932\n+91 9009800600\n+91 9926122722',
+                              animation: 'fadeIn', target: c.isCntctAnmTrig, textSize: 12),
                           SizedBox(height: 24),
                           _buildContactInfo(
                             Icons.location_on,
@@ -95,17 +89,14 @@ class ContactInfo extends StatelessWidget {
                         cursor: SystemMouseCursors.click,
                         child: GestureDetector(
                           onTap: () {
-                            Get.toNamed(AppRoutes
-                                .contact); // Ensure the correct route name
+                            Get.toNamed(AppRoutes.contact); // Ensure the correct route name
                           },
                           child: AnimatedContainer(
                             duration: 600.ms,
                             height: 80,
                             width: 200,
                             decoration: BoxDecoration(
-                              color: c.isReadMoreButtonHovered
-                                  ? AppColors.primaryColor
-                                  : AppColors.transparent,
+                              color: c.isReadMoreButtonHovered ? AppColors.primaryColor : AppColors.transparent,
                               border: Border.all(
                                 color: AppColors.primaryColor,
                               ),
@@ -136,9 +127,7 @@ class ContactInfo extends StatelessWidget {
                               ],
                             ),
                           ),
-                        )
-                            .animate(target: c.isCntctAnmTrig ? 1 : 0)
-                            .fadeIn(duration: 2000.ms, curve: Curves.easeOut),
+                        ).animate(target: c.isCntctAnmTrig ? 1 : 0).fadeIn(duration: 2000.ms, curve: Curves.easeOut),
                       ),
                     ],
                   ),
@@ -162,8 +151,7 @@ class ContactInfo extends StatelessWidget {
                   }
                 },
                 child: Container(
-                  padding:
-                      EdgeInsets.symmetric(vertical: 40.0, horizontal: 20.0),
+                  padding: EdgeInsets.symmetric(vertical: 40.0, horizontal: 20.0),
                   color: Colors.white,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -177,9 +165,7 @@ class ContactInfo extends StatelessWidget {
                           fontFamily: AppFonts.hunters,
                           fontWeight: FontWeight.normal,
                           color: AppColors.secondaryColor,
-                        )
-                            .animate(target: c.isCntctAnmTrig ? 1 : 0)
-                            .fadeIn(duration: 600.ms, curve: Curves.easeIn),
+                        ).animate(target: c.isCntctAnmTrig ? 1 : 0).fadeIn(duration: 600.ms, curve: Curves.easeIn),
                       ),
                       SizedBox(height: 40),
                       // Contact Information
@@ -187,17 +173,13 @@ class ContactInfo extends StatelessWidget {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
+                            _buildContactInfo(Icons.email, '${AppStrings.email}\n\n\n',
+                                animation: 'slideLeft', target: c.isCntctAnmTrig),
                             _buildContactInfo(
-                                Icons.email, '${AppStrings.email}\n\n\n',
-                                animation: 'slideLeft',
-                                target: c.isCntctAnmTrig),
-                            _buildContactInfo(Icons.phone,
-                                '+91 9589553039\n+91 8602299932\n+91 9009800600\n+91 9926122722',
+                                Icons.phone, '+91 9589553039\n+91 8602299932\n+91 9009800600\n+91 9926122722',
                                 animation: 'fadeIn', target: c.isCntctAnmTrig),
-                            _buildContactInfo(Icons.location_on,
-                                '${AppStrings.address1}\n\n\n',
-                                animation: 'slideRight',
-                                target: c.isCntctAnmTrig),
+                            _buildContactInfo(Icons.location_on, '${AppStrings.address1}\n\n\n',
+                                animation: 'slideRight', target: c.isCntctAnmTrig),
                           ],
                         ),
                       ),
@@ -215,17 +197,14 @@ class ContactInfo extends StatelessWidget {
                         cursor: SystemMouseCursors.click,
                         child: GestureDetector(
                           onTap: () {
-                            Get.toNamed(AppRoutes
-                                .contact); // Ensure the correct route name
+                            Get.toNamed(AppRoutes.contact); // Ensure the correct route name
                           },
                           child: AnimatedContainer(
                             duration: 600.ms,
                             height: 80,
                             width: 200,
                             decoration: BoxDecoration(
-                              color: c.isReadMoreButtonHovered
-                                  ? AppColors.primaryColor
-                                  : AppColors.transparent,
+                              color: c.isReadMoreButtonHovered ? AppColors.primaryColor : AppColors.transparent,
                               border: Border.all(
                                 color: AppColors.primaryColor,
                               ),
@@ -256,9 +235,7 @@ class ContactInfo extends StatelessWidget {
                               ],
                             ),
                           ),
-                        )
-                            .animate(target: c.isCntctAnmTrig ? 1 : 0)
-                            .fadeIn(duration: 2000.ms, curve: Curves.easeOut),
+                        ).animate(target: c.isCntctAnmTrig ? 1 : 0).fadeIn(duration: 2000.ms, curve: Curves.easeOut),
                       ),
                     ],
                   ),
@@ -272,10 +249,7 @@ class ContactInfo extends StatelessWidget {
   }
 
   Widget _buildContactInfo(IconData icon, String info,
-      {required String animation,
-      required bool target,
-      double? textSize,
-      int? maxLines}) {
+      {required String animation, required bool target, double? textSize, int? maxLines}) {
     Widget contactInfo = Container(
       width: 400,
       alignment: Alignment.center,
@@ -298,16 +272,16 @@ class ContactInfo extends StatelessWidget {
 
     switch (animation) {
       case 'slideLeft':
-        return contactInfo.animate(target: target ? 1 : 0).slide(
-            begin: Offset(-1, 0), duration: 600.ms, curve: Curves.easeOut);
-      case 'slideRight':
-        return contactInfo.animate(target: target ? 1 : 0).slide(
-            begin: Offset(1, 0), duration: 600.ms, curve: Curves.easeOut);
-      case 'fadeIn':
-      default:
         return contactInfo
             .animate(target: target ? 1 : 0)
-            .fadeIn(duration: 600.ms, curve: Curves.easeIn);
+            .slide(begin: Offset(-1, 0), duration: 600.ms, curve: Curves.easeOut);
+      case 'slideRight':
+        return contactInfo
+            .animate(target: target ? 1 : 0)
+            .slide(begin: Offset(1, 0), duration: 600.ms, curve: Curves.easeOut);
+      case 'fadeIn':
+      default:
+        return contactInfo.animate(target: target ? 1 : 0).fadeIn(duration: 600.ms, curve: Curves.easeIn);
     }
   }
 }

@@ -54,15 +54,13 @@ class AboutUsView extends StatelessWidget {
                                 fit: BoxFit.cover,
                               ),
                             ),
-                          )
-                              .animate()
-                              .fadeIn(duration: 600.ms, curve: Curves.easeIn),
+                          ).animate().fadeIn(duration: 600.ms, curve: Curves.easeIn),
                           Container(
                             width: wdth,
                             height: hght * 0.5,
                             alignment: Alignment.center,
                             decoration: BoxDecoration(
-                              color: AppColors.black.withOpacity(0.8),
+                              color: AppColors.black.withValues(alpha: 0.8),
                             ),
                             child: AppText(
                               text: 'About Us',
@@ -70,9 +68,7 @@ class AboutUsView extends StatelessWidget {
                               fontWeight: FontWeight.bold,
                               fontFamily: AppFonts.gaby,
                               color: AppColors.primaryColor,
-                            )
-                                .animate()
-                                .fadeIn(duration: 800.ms, curve: Curves.easeIn),
+                            ).animate().fadeIn(duration: 800.ms, curve: Curves.easeIn),
                           ),
                         ],
                       ),
@@ -87,8 +83,7 @@ class AboutUsView extends StatelessWidget {
                             size: 24.0,
                             fontWeight: FontWeight.normal,
                             color: AppColors.secondaryColor,
-                            fontFamily:
-                                AppFonts.gaby, // Replace with your funky font
+                            fontFamily: AppFonts.gaby, // Replace with your funky font
                             textAlign: TextAlign.center,
                             maxLines: 6,
                           ),
@@ -172,15 +167,13 @@ class AboutUsView extends StatelessWidget {
                                 fit: BoxFit.cover,
                               ),
                             ),
-                          )
-                              .animate()
-                              .fadeIn(duration: 600.ms, curve: Curves.easeIn),
+                          ).animate().fadeIn(duration: 600.ms, curve: Curves.easeIn),
                           Container(
                             width: wdth,
                             height: hght * 0.8,
                             alignment: Alignment.center,
                             decoration: BoxDecoration(
-                              color: AppColors.black.withOpacity(0.8),
+                              color: AppColors.black.withValues(alpha: 0.8),
                             ),
                             child: AppText(
                               text: 'About Us',
@@ -188,9 +181,7 @@ class AboutUsView extends StatelessWidget {
                               fontWeight: FontWeight.bold,
                               fontFamily: AppFonts.gaby,
                               color: AppColors.primaryColor,
-                            )
-                                .animate()
-                                .fadeIn(duration: 800.ms, curve: Curves.easeIn),
+                            ).animate().fadeIn(duration: 800.ms, curve: Curves.easeIn),
                           ),
                         ],
                       ),
@@ -205,8 +196,7 @@ class AboutUsView extends StatelessWidget {
                             size: 40.0,
                             fontWeight: FontWeight.normal,
                             color: AppColors.secondaryColor,
-                            fontFamily:
-                                AppFonts.gaby, // Replace with your funky font
+                            fontFamily: AppFonts.gaby, // Replace with your funky font
                             textAlign: TextAlign.center,
                             maxLines: 6,
                           ),
@@ -224,8 +214,7 @@ class AboutUsView extends StatelessWidget {
                         child: Padding(
                           padding: EdgeInsets.symmetric(horizontal: 120.0),
                           child: _buildCard(
-                              imagePath: Appimages
-                                  .card1, // Replace with your image asset
+                              imagePath: Appimages.card1, // Replace with your image asset
                               title: 'Our Mission',
                               text: AppStrings.missionText,
                               imageLeft: true,
@@ -244,8 +233,7 @@ class AboutUsView extends StatelessWidget {
                         child: Padding(
                           padding: EdgeInsets.symmetric(horizontal: 120.0),
                           child: _buildCard(
-                            imagePath: Appimages
-                                .card2, // Replace with your image asset
+                            imagePath: Appimages.card2, // Replace with your image asset
                             title: 'Our Vision',
                             text: AppStrings.visionText,
                             imageLeft: false,
@@ -277,7 +265,6 @@ class AboutUsView extends StatelessWidget {
     bool isMobile = false,
     Color? color,
     double? wdth,
-    double? hght,
   }) {
     return Container(
       width: isMobile ? wdth : double.maxFinite,
@@ -285,8 +272,7 @@ class AboutUsView extends StatelessWidget {
       decoration: BoxDecoration(color: color ?? AppColors.primaryColor),
       child: Row(
         children: [
-          if (imageLeft)
-            _buildImage(imagePath, target, isMobile: isMobile ? true : false),
+          if (imageLeft) _buildImage(imagePath, target, isMobile: isMobile ? true : false),
           Expanded(
             child: Padding(
               padding: const EdgeInsets.all(8.0),
@@ -313,12 +299,9 @@ class AboutUsView extends StatelessWidget {
               ),
             ),
           ),
-          if (!imageLeft)
-            _buildImage(imagePath, target, isMobile: isMobile ? true : false),
+          if (!imageLeft) _buildImage(imagePath, target, isMobile: isMobile ? true : false),
         ],
-      )
-          .animate(target: target ? 1 : 0)
-          .fadeIn(duration: 600.ms, curve: Curves.easeIn),
+      ).animate(target: target ? 1 : 0).fadeIn(duration: 600.ms, curve: Curves.easeIn),
     );
   }
 
@@ -328,8 +311,6 @@ class AboutUsView extends StatelessWidget {
       width: isMobile ? 160 : 320,
       height: isMobile ? 160 : 320,
       fit: BoxFit.cover,
-    )
-        .animate(target: target ? 1 : 0)
-        .fadeIn(duration: 600.ms, curve: Curves.easeIn);
+    ).animate(target: target ? 1 : 0).fadeIn(duration: 600.ms, curve: Curves.easeIn);
   }
 }

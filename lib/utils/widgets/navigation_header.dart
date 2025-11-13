@@ -1,7 +1,6 @@
 // ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, prefer_const_constructors_in_immutables
 
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:food_portfolio/resources/app_colors.dart';
 import 'package:food_portfolio/resources/app_images.dart';
 import 'package:food_portfolio/utils/widgets/app_text.dart';

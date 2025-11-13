@@ -13,7 +13,6 @@ class Footer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var wdth = MediaQuery.of(context).size.width;
-    var hght = MediaQuery.of(context).size.height;
     return ResponsiveBuilder(builder: (context, sizingInformation) {
       if (sizingInformation.deviceScreenType == DeviceScreenType.mobile) {
         return Container(
@@ -106,8 +105,7 @@ class Footer extends StatelessWidget {
                         maxLines: 2,
                       ),
                       AppText(
-                        text:
-                            '+91 9589553039\n+91 8602299932\n+91 9009800600\n+91 9926122722',
+                        text: '+91 9589553039\n+91 8602299932\n+91 9009800600\n+91 9926122722',
                         size: 16.0,
                         color: Colors.white,
                       ),
@@ -245,8 +243,7 @@ class Footer extends StatelessWidget {
                         ),
                         SizedBox(height: 8),
                         AppText(
-                          text:
-                              'Phone: +91 9589553039\n+91 8602299932\n+91 9009800600\n+91 9926122722',
+                          text: 'Phone: +91 9589553039\n+91 8602299932\n+91 9009800600\n+91 9926122722',
                           size: 18.0,
                           color: Colors.white,
                         ),
@@ -275,8 +272,7 @@ class Footer extends StatelessWidget {
                               icon: Icon(Icons.facebook),
                               iconSize: 24,
                               color: Colors.white,
-                              onPressed: () =>
-                                  _launchURL('https://www.facebook.com'),
+                              onPressed: () => _launchURL('https://www.facebook.com'),
                             ),
                           ],
                         ),

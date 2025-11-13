@@ -26,7 +26,7 @@ class HeroSection extends StatelessWidget {
             Container(
               width: double.infinity,
               height: hght * 0.5,
-              color: AppColors.black.withOpacity(0.7),
+              color: AppColors.black.withValues(alpha: 0.7),
               alignment: Alignment.center,
               child: AppText(
                 text: 'Visit Us',
@@ -34,8 +34,7 @@ class HeroSection extends StatelessWidget {
                 fontFamily: AppFonts.hunters,
                 fontWeight: FontWeight.normal,
                 color: AppColors.primaryColor,
-              ).animate().slide(
-                  begin: Offset(0, 1), end: Offset(0, 0), duration: 800.ms),
+              ).animate().slide(begin: Offset(0, 1), end: Offset(0, 0), duration: 800.ms),
             ),
           ],
         );
@@ -52,7 +51,7 @@ class HeroSection extends StatelessWidget {
             Container(
               width: double.infinity,
               height: hght * 0.7,
-              color: AppColors.black.withOpacity(0.7),
+              color: AppColors.black.withValues(alpha: 0.7),
               alignment: Alignment.center,
               child: AppText(
                 text: 'Visit Us',
@@ -60,8 +59,7 @@ class HeroSection extends StatelessWidget {
                 fontFamily: AppFonts.hunters,
                 fontWeight: FontWeight.normal,
                 color: AppColors.primaryColor,
-              ).animate().slide(
-                  begin: Offset(0, 1), end: Offset(0, 0), duration: 800.ms),
+              ).animate().slide(begin: Offset(0, 1), end: Offset(0, 0), duration: 800.ms),
             ),
           ],
         );

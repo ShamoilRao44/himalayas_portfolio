@@ -1,15 +1,12 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:food_portfolio/module/blog/blog_vm.dart';
 import 'package:food_portfolio/resources/app_colors.dart';
-import 'package:food_portfolio/resources/app_strings.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 
-import 'package:food_portfolio/module/home/home_vm.dart';
 import 'package:food_portfolio/resources/app_fonts.dart';
 import 'package:food_portfolio/resources/app_images.dart';
 import 'package:get/get.dart';
@@ -105,7 +102,7 @@ class HeroSection extends StatelessWidget {
                             //     AppColors.black.withOpacity(0.7),
                             //   ],
                             // ),
-                            color: AppColors.black.withOpacity(0.7)),
+                            color: AppColors.black.withValues(alpha: 0.7)),
                       ),
                       // BLOG TEXT
                       Text(
